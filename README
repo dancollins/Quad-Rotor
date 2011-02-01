@@ -1,0 +1,5 @@
+The files in this repository are released under the Primis Open Programming Language (POPL), which is available for download at http://primiscomputers.com/POPL.txt.
+
+These files make up the software side of my quad rotor poject, which you see can at: http://dancollins.github.com/projects/quad_rotor.html  The master branch will contain the working source, and the experimental branch will, in the future, contain the latest source.  I do not gaurantee either to be bug free, but you can expect the experimental source to buggy compared to the master at times (other times the experimental might be more stable!).
+
+If you have any questions, feel free to contact me.  My details are at: http://dancollins.github.com/contact.html

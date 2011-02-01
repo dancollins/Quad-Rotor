@@ -1,0 +1,49 @@
+Primis Open Programming License (POPL) 
+Availible for download at http://primiscomputers.com/POPL.txt
+
+Copyright (c) <year>, <copyright holder>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    o Redistribution of source code must retain an open source directive,
+      any attempt of using this work, either source or binary in a closed 
+      source project is strictly prohibited by this license.
+    o Any attempt of selling a source or binary distribution of this product
+      is expressly prohibited unless explicit allowed by prior written agreement 
+      by original author.
+    o Redistribution in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+      Unless binary distribution is on an embedded platform, in which case
+      only the source must have a reproduction.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND THE CONTRIBUTORS "AS IS"
+WITHOUT ANY WARRANTY, EITHER EXPRESSED OR IMPLIED. IN NO EVENT SHALL DAN COLLINS
+BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+(And now in English:)
+
+Clause A:
+  You can re-license any derivative work under any open source license. This means that
+  you aren't bound to this particular license, while still enforcing openness. However,
+  It is not permitted to license this work inside a closed source project. 
+
+Clause B:
+  You're not allowed to sell this work without permission from the author.
+
+Clause C:
+  If you're just redistributing an unmodified binary, you have to include this license file in
+  a plain text format (preferably named LICENSE.TXT), unless on an embedded platform, in which case,
+  you just need it with the source code.
+
+Warranty Disclaimer:
+  We are giving you this software "as is" - this means if your equipment malfunctions in any way shape or
+  form, we take no responsibility. Even if we tell you something bad could happen.
+
+(You don't have to include this explanation, its here for clarity only)
