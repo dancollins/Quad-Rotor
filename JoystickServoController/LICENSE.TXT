@@ -1,7 +1,7 @@
 Primis Open Programming License (POPL) 
 Availible for download at http://primiscomputers.com/POPL.txt
 
-Copyright (c) <year>, <copyright holder>
+Copyright (c) 2011, Dan Collins
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
