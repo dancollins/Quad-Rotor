@@ -1,5 +1,0 @@
-This source reads input from the XBOX 360 controller (providing it is joystick 0).  Running the demo will be fine with the SDL.dll provided, but you will need to get the SDL library (from: http://www.libsdl.org/) and compile it in order to recompile my source.
-
-There is plenty of room for improvement, but for a simple demo of servo control, wireless data transmission, and joystick interfacing it is fine.
-
-Dan Collins 2011
