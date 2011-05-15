@@ -1,0 +1,262 @@
+ARM GAS  /tmp/ccED5HLT.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"spi.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 44000000 		.text
+  20      02003E00 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              	.Letext0:
+  24              		.file 1 "../../os/hal/platforms/STM32/core_cm3.h"
+  25              		.section	.debug_info
+  26 0000 7E000000 		.4byte	0x7e
+  27 0004 0200     		.2byte	0x2
+  28 0006 00000000 		.4byte	.Ldebug_abbrev0
+  29 000a 04       		.byte	0x4
+  30 000b 01       		.uleb128 0x1
+  31 000c D3000000 		.4byte	.LASF9
+  32 0010 01       		.byte	0x1
+  33 0011 BC000000 		.4byte	.LASF10
+  34 0015 6C000000 		.4byte	.LASF11
+  35 0019 00000000 		.4byte	.Ltext0
+  36 001d 00000000 		.4byte	.Letext0
+  37 0021 00000000 		.4byte	.Ldebug_line0
+  38 0025 02       		.uleb128 0x2
+  39 0026 04       		.byte	0x4
+  40 0027 05       		.byte	0x5
+  41 0028 696E7400 		.ascii	"int\000"
+  42 002c 03       		.uleb128 0x3
+  43 002d 04       		.byte	0x4
+  44 002e 07       		.byte	0x7
+  45 002f 00000000 		.4byte	.LASF0
+  46 0033 03       		.uleb128 0x3
+  47 0034 01       		.byte	0x1
+  48 0035 06       		.byte	0x6
+  49 0036 2C000000 		.4byte	.LASF1
+  50 003a 03       		.uleb128 0x3
+  51 003b 01       		.byte	0x1
+  52 003c 08       		.byte	0x8
+  53 003d A5000000 		.4byte	.LASF2
+ARM GAS  /tmp/ccED5HLT.s 			page 2
+
+
+  54 0041 03       		.uleb128 0x3
+  55 0042 02       		.byte	0x2
+  56 0043 05       		.byte	0x5
+  57 0044 4B000000 		.4byte	.LASF3
+  58 0048 03       		.uleb128 0x3
+  59 0049 02       		.byte	0x2
+  60 004a 07       		.byte	0x7
+  61 004b 38000000 		.4byte	.LASF4
+  62 004f 03       		.uleb128 0x3
+  63 0050 04       		.byte	0x4
+  64 0051 05       		.byte	0x5
+  65 0052 B3000000 		.4byte	.LASF5
+  66 0056 03       		.uleb128 0x3
+  67 0057 04       		.byte	0x4
+  68 0058 07       		.byte	0x7
+  69 0059 0D000000 		.4byte	.LASF6
+  70 005d 03       		.uleb128 0x3
+  71 005e 08       		.byte	0x8
+  72 005f 05       		.byte	0x5
+  73 0060 DF000000 		.4byte	.LASF7
+  74 0064 03       		.uleb128 0x3
+  75 0065 08       		.byte	0x8
+  76 0066 07       		.byte	0x7
+  77 0067 55000000 		.4byte	.LASF8
+  78 006b 04       		.uleb128 0x4
+  79 006c 04       		.byte	0x4
+  80 006d 07       		.byte	0x7
+  81 006e 05       		.uleb128 0x5
+  82 006f 1F000000 		.4byte	.LASF12
+  83 0073 01       		.byte	0x1
+  84 0074 ED06     		.2byte	0x6ed
+  85 0076 7C000000 		.4byte	0x7c
+  86 007a 01       		.byte	0x1
+  87 007b 01       		.byte	0x1
+  88 007c 06       		.uleb128 0x6
+  89 007d 25000000 		.4byte	0x25
+  90 0081 00       		.byte	0x0
+  91              		.section	.debug_abbrev
+  92 0000 01       		.uleb128 0x1
+  93 0001 11       		.uleb128 0x11
+  94 0002 01       		.byte	0x1
+  95 0003 25       		.uleb128 0x25
+  96 0004 0E       		.uleb128 0xe
+  97 0005 13       		.uleb128 0x13
+  98 0006 0B       		.uleb128 0xb
+  99 0007 03       		.uleb128 0x3
+ 100 0008 0E       		.uleb128 0xe
+ 101 0009 1B       		.uleb128 0x1b
+ 102 000a 0E       		.uleb128 0xe
+ 103 000b 11       		.uleb128 0x11
+ 104 000c 01       		.uleb128 0x1
+ 105 000d 12       		.uleb128 0x12
+ 106 000e 01       		.uleb128 0x1
+ 107 000f 10       		.uleb128 0x10
+ 108 0010 06       		.uleb128 0x6
+ 109 0011 00       		.byte	0x0
+ 110 0012 00       		.byte	0x0
+ARM GAS  /tmp/ccED5HLT.s 			page 3
+
+
+ 111 0013 02       		.uleb128 0x2
+ 112 0014 24       		.uleb128 0x24
+ 113 0015 00       		.byte	0x0
+ 114 0016 0B       		.uleb128 0xb
+ 115 0017 0B       		.uleb128 0xb
+ 116 0018 3E       		.uleb128 0x3e
+ 117 0019 0B       		.uleb128 0xb
+ 118 001a 03       		.uleb128 0x3
+ 119 001b 08       		.uleb128 0x8
+ 120 001c 00       		.byte	0x0
+ 121 001d 00       		.byte	0x0
+ 122 001e 03       		.uleb128 0x3
+ 123 001f 24       		.uleb128 0x24
+ 124 0020 00       		.byte	0x0
+ 125 0021 0B       		.uleb128 0xb
+ 126 0022 0B       		.uleb128 0xb
+ 127 0023 3E       		.uleb128 0x3e
+ 128 0024 0B       		.uleb128 0xb
+ 129 0025 03       		.uleb128 0x3
+ 130 0026 0E       		.uleb128 0xe
+ 131 0027 00       		.byte	0x0
+ 132 0028 00       		.byte	0x0
+ 133 0029 04       		.uleb128 0x4
+ 134 002a 24       		.uleb128 0x24
+ 135 002b 00       		.byte	0x0
+ 136 002c 0B       		.uleb128 0xb
+ 137 002d 0B       		.uleb128 0xb
+ 138 002e 3E       		.uleb128 0x3e
+ 139 002f 0B       		.uleb128 0xb
+ 140 0030 00       		.byte	0x0
+ 141 0031 00       		.byte	0x0
+ 142 0032 05       		.uleb128 0x5
+ 143 0033 34       		.uleb128 0x34
+ 144 0034 00       		.byte	0x0
+ 145 0035 03       		.uleb128 0x3
+ 146 0036 0E       		.uleb128 0xe
+ 147 0037 3A       		.uleb128 0x3a
+ 148 0038 0B       		.uleb128 0xb
+ 149 0039 3B       		.uleb128 0x3b
+ 150 003a 05       		.uleb128 0x5
+ 151 003b 49       		.uleb128 0x49
+ 152 003c 13       		.uleb128 0x13
+ 153 003d 3F       		.uleb128 0x3f
+ 154 003e 0C       		.uleb128 0xc
+ 155 003f 3C       		.uleb128 0x3c
+ 156 0040 0C       		.uleb128 0xc
+ 157 0041 00       		.byte	0x0
+ 158 0042 00       		.byte	0x0
+ 159 0043 06       		.uleb128 0x6
+ 160 0044 35       		.uleb128 0x35
+ 161 0045 00       		.byte	0x0
+ 162 0046 49       		.uleb128 0x49
+ 163 0047 13       		.uleb128 0x13
+ 164 0048 00       		.byte	0x0
+ 165 0049 00       		.byte	0x0
+ 166 004a 00       		.byte	0x0
+ 167              		.section	.debug_str,"MS",%progbits,1
+ARM GAS  /tmp/ccED5HLT.s 			page 4
+
+
+ 168              	.LASF0:
+ 169 0000 756E7369 		.ascii	"unsigned int\000"
+ 169      676E6564 
+ 169      20696E74 
+ 169      00
+ 170              	.LASF6:
+ 171 000d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 171      20756E73 
+ 171      69676E65 
+ 171      6420696E 
+ 171      7400
+ 172              	.LASF12:
+ 173 001f 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 173      52784275 
+ 173      66666572 
+ 173      00
+ 174              	.LASF1:
+ 175 002c 7369676E 		.ascii	"signed char\000"
+ 175      65642063 
+ 175      68617200 
+ 176              	.LASF4:
+ 177 0038 73686F72 		.ascii	"short unsigned int\000"
+ 177      7420756E 
+ 177      7369676E 
+ 177      65642069 
+ 177      6E7400
+ 178              	.LASF3:
+ 179 004b 73686F72 		.ascii	"short int\000"
+ 179      7420696E 
+ 179      7400
+ 180              	.LASF8:
+ 181 0055 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 181      206C6F6E 
+ 181      6720756E 
+ 181      7369676E 
+ 181      65642069 
+ 182              	.LASF11:
+ 183 006c 2F686F6D 		.ascii	"/home/dan/Downloads/ChibiOS_2.2.3/demos/ARMCM3-STM3"
+ 183      652F6461 
+ 183      6E2F446F 
+ 183      776E6C6F 
+ 183      6164732F 
+ 184 009f 32463130 		.ascii	"2F103\000"
+ 184      3300
+ 185              	.LASF2:
+ 186 00a5 756E7369 		.ascii	"unsigned char\000"
+ 186      676E6564 
+ 186      20636861 
+ 186      7200
+ 187              	.LASF5:
+ 188 00b3 6C6F6E67 		.ascii	"long int\000"
+ 188      20696E74 
+ 188      00
+ 189              	.LASF10:
+ 190 00bc 2E2E2F2E 		.ascii	"../../os/hal/src/spi.c\000"
+ 190      2E2F6F73 
+ 190      2F68616C 
+ARM GAS  /tmp/ccED5HLT.s 			page 5
+
+
+ 190      2F737263 
+ 190      2F737069 
+ 191              	.LASF9:
+ 192 00d3 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 192      4320342E 
+ 192      342E3100 
+ 193              	.LASF7:
+ 194 00df 6C6F6E67 		.ascii	"long long int\000"
+ 194      206C6F6E 
+ 194      6720696E 
+ 194      7400
+ 195              		.ident	"GCC: (Red Suite 2010Q1 by Code Red) 4.4.1"
+ARM GAS  /tmp/ccED5HLT.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 spi.c
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,172 @@
+ARM GAS  /tmp/ccgS6Uzk.s 			page 1
+
+
+   1              	# 1 "../../os/ports/GCC/ARMCMx/crt0_v7m.s"
+   1              	/*
+   0              	
+   0              	
+   2              	    ChibiOS/RT - Copyright (C) 2006,2007,2008,2009,2010,2011 Giovanni Di Sirio.
+   3              	
+   4              	    This file is part of ChibiOS/RT.
+   5              	
+   6              	    ChibiOS/RT is free software; you can redistribute it and/or modify
+   7              	    it under the terms of the GNU General Public License as published by
+   8              	    the Free Software Foundation; either version 3 of the License, or
+   9              	    (at your option) any later version.
+  10              	
+  11              	    ChibiOS/RT is distributed in the hope that it will be useful,
+  12              	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13              	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  14              	    GNU General Public License for more details.
+  15              	
+  16              	    You should have received a copy of the GNU General Public License
+  17              	    along with this program. If not, see <http://www.gnu.org/licenses/>.
+  18              	
+  19              	                                      ---
+  20              	
+  21              	    A special exception to the GPL can be applied should you wish to distribute
+  22              	    a combined work that includes ChibiOS/RT, without being obliged to provide
+  23              	    the source code for any proprietary components. See the file exception.txt
+  24              	    for full details of how and when the exception can be applied.
+  25              	*/
+  26              	
+  27              	/**
+  28              	 * @file    GCC/ARMCMx/crt0_v7m.s
+  29              	 * @brief   Generic ARMv7-M (Cortex-M3/M4) startup file for ChibiOS/RT.
+  30              	 *
+  31              	 * @addtogroup ARMCMx_CORE
+  32              	 * @{
+  33              	 */
+  34              	
+  35              	#if !defined(__DOXYGEN__)
+  36              	
+  37              	        .set    CONTROL_MODE_PRIVILEGED, 0
+  38              	        .set    CONTROL_MODE_UNPRIVILEGED, 1
+  39              	        .set    CONTROL_USE_MSP, 0
+  40              	        .set    CONTROL_USE_PSP, 2
+  41              	
+  42              	        .text
+  43              	        .balign 2
+  44              	        .syntax unified
+  45              	        .thumb
+  46              	
+  47              	/*
+  48              	 * Reset handler.
+  49              	 */
+  50              	        .thumb_func
+  51              	        .global ResetHandler
+  52              	        .weak   ResetHandler
+  53              	ResetHandler:
+  54              	        /*
+ARM GAS  /tmp/ccgS6Uzk.s 			page 2
+
+
+  55              	         * Interrupts are globally masked initially.
+  56              	         */
+  57 0000 72B6     	        cpsid   i
+  58              	        /*
+  59              	         * Stack pointers initialization.
+  60              	         */
+  61 0002 1248     	        ldr     r0, =__ram_end__
+  62 0004 1249     	        ldr     r1, =__main_stack_size__
+  63 0006 401A     	        subs    r0, r0, r1
+  64              	        /*
+  65              	         * Note that r0 is the main stack low boundary address and process
+  66              	         * stack initial top address.
+  67              	         */
+  68 0008 80F30988 	        msr     PSP, r0
+  69              	        /*
+  70              	         * Early initialization phase, it is empty by default.
+  71              	         */
+  72 000c FFF7FEFF 	        bl      __early_init
+  73              	        /*
+  74              	         * Data initialization.
+  75              	         * NOTE: It assumes that the DATA size is a multiple of 4.
+  76              	         */
+  77 0010 1049     	        ldr     r1, =_textdata
+  78 0012 114A     	        ldr     r2, =_data
+  79 0014 114B     	        ldr     r3, =_edata
+  80              	dloop:
+  81 0016 9A42     	        cmp     r2, r3
+  82 0018 3EBF     	        ittt    lo
+  83 001a 51F8040B 	        ldrlo   r0, [r1], #4
+  84 001e 42F8040B 	        strlo   r0, [r2], #4
+  85 0022 F8E7     	        blo     dloop
+  86              	        /*
+  87              	         * BSS initialization.
+  88              	         * NOTE: It assumes that the BSS size is a multiple of 4.
+  89              	         */
+  90 0024 0020     	        movs    r0, #0
+  91 0026 0E49     	        ldr     r1, =_bss_start
+  92 0028 0E4A     	        ldr     r2, =_bss_end
+  93              	bloop:
+  94 002a 9142     	        cmp     r1, r2
+  95 002c 3CBF     	        itt     lo
+  96 002e 41F8040B 	        strlo   r0, [r1], #4
+  97 0032 FAE7     	        blo     bloop
+  98              	        /*
+  99              	         * Switches to the Process Stack and uses a barrier just to be safe.
+ 100              	         */
+ 101 0034 0220     	        movs    r0, #CONTROL_MODE_PRIVILEGED | CONTROL_USE_PSP
+ 102 0036 80F31488 	        msr     CONTROL, r0
+ 103 003a BFF36F8F 	        isb
+ 104              	        /*
+ 105              	         * Main program invocation.
+ 106              	         */
+ 107 003e FFF7FEFF 	        bl      main
+ 108 0042 FFF7FEBF 	        b       _main_exit_handler
+ 109              	
+ 110              	/*
+ 111              	 * Default main exit code, just a loop.
+ARM GAS  /tmp/ccgS6Uzk.s 			page 3
+
+
+ 112              	 * It is a weak symbol, the application code can redefine the behavior.
+ 113              	 */
+ 114              	        .thumb_func
+ 115              	        .global _main_exit_handler
+ 116              	        .weak   _main_exit_handler
+ 117              	_main_exit_handler:
+ 118 0046 FEE7     	.loop:  b       .loop
+ 119              	
+ 120              	/*
+ 121              	 * Default early initialization code. It is declared weak in order to be
+ 122              	 * replaced by the real initialization code.
+ 123              	 * The arly initialization is performed just after stacks setup and before BSS
+ 124              	 * and DATA segments initialization.
+ 125              	 */
+ 126              	        .thumb_func
+ 127              	        .global __early_init
+ 128              	        .weak   __early_init
+ 129              	__early_init:
+ 130 0048 70470000 	        bx      lr
+ 130      00000000 
+ 130      00000000 
+ 130      00000000 
+ 130      00000000 
+ARM GAS  /tmp/ccgS6Uzk.s 			page 4
+
+
+DEFINED SYMBOLS
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:37     *ABS*:00000000 CONTROL_MODE_PRIVILEGED
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:38     *ABS*:00000001 CONTROL_MODE_UNPRIVILEGED
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:39     *ABS*:00000000 CONTROL_USE_MSP
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:40     *ABS*:00000002 CONTROL_USE_PSP
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:43     .text:00000000 $t
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:53     .text:00000000 ResetHandler
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:129    .text:00000048 __early_init
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:80     .text:00000016 dloop
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:93     .text:0000002a bloop
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:117    .text:00000046 _main_exit_handler
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:118    .text:00000046 .loop
+../../os/ports/GCC/ARMCMx/crt0_v7m.s:130    .text:0000004a $d
+
+UNDEFINED SYMBOLS
+__ram_end__
+__main_stack_size__
+_textdata
+_data
+_edata
+_bss_start
+_bss_end
+main
