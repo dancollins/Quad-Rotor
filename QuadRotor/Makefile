@@ -57,11 +57,13 @@ LDSCRIPT= ch.ld
 
 # Imported source files
 CHIBIOS = chibios
-# TODO FIXME include $(CHIBIOS)/boards/OLIMEX_STM32_P103/board.mk
 include $(CHIBIOS)/os/hal/platforms/STM32/platform.mk
 include $(CHIBIOS)/os/hal/hal.mk
 include $(CHIBIOS)/os/ports/GCC/ARMCMx/STM32/port.mk
 include $(CHIBIOS)/os/kernel/kernel.mk
+
+# Board
+BOARDSRC = board.c # List of all the board related files.
 
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.

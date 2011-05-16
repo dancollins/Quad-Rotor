@@ -22,41 +22,55 @@
     a combined work that includes ChibiOS/RT, without being obliged to provide
     the source code for any proprietary components. See the file exception.txt
     for full details of how and when the exception can be applied.
-    
-    Modified by Dan Collins 16/05/2011
 */
 
+/**
+ * @file evtimer.c
+ * @brief Events Generator Timer code.
+ * @addtogroup event_timer
+ * @{
+ */
+
 #include "ch.h"
-#include "hal.h"
+#include "evtimer.h"
+
+static void tmrcb(void *p) {
+  EvTimer *etp = p;
+
+  chEvtBroadcastI(&etp->et_es);
+  chVTSetI(&etp->et_vt, etp->et_interval, tmrcb, etp);
+}
 
 /**
- * @brief   PAL setup.
- * @details Digital I/O ports static configuration as defined in @p board.h.
- *          This variable is used by the HAL when initializing the PAL driver.
+ * @brief Starts the timer
+ * @details If the timer was already running then the function has no effect.
+ *
+ * @param etp pointer to an initialized @p EvTimer structure.
  */
-#if HAL_USE_PAL || defined(__DOXYGEN__)
-const PALConfig pal_default_config =
-{
-  {VAL_GPIOAODR, VAL_GPIOACRL, VAL_GPIOACRH},
-  {VAL_GPIOBODR, VAL_GPIOBCRL, VAL_GPIOBCRH},
-  {VAL_GPIOCODR, VAL_GPIOCCRL, VAL_GPIOCCRH},
-  {VAL_GPIODODR, VAL_GPIODCRL, VAL_GPIODCRH},
-  {VAL_GPIOEODR, VAL_GPIOECRL, VAL_GPIOECRH},
-};
-#endif
+void evtStart(EvTimer *etp) {
 
-/*
- * Early initialization code.
- * This initialization must be performed just after stack setup and before
- * any other initialization.
- */
-void __early_init(void) {
+  chSysLock();
 
-  stm32_clock_init();
+  if (!chVTIsArmedI(&etp->et_vt))
+    chVTSetI(&etp->et_vt, etp->et_interval, tmrcb, etp);
+
+  chSysUnlock();
 }
 
-/*
- * Board-specific initialization code.
+/**
+ * @brief Stops the timer.
+ * @details If the timer was already stopped then the function has no effect.
+ *
+ * @param etp pointer to an initialized @p EvTimer structure.
  */
-void boardInit(void) {
+void evtStop(EvTimer *etp) {
+
+  chSysLock();
+
+  if (chVTIsArmedI(&etp->et_vt))
+    chVTResetI(&etp->et_vt);
+
+  chSysUnlock();
 }
+
+/** @} */

@@ -22,41 +22,48 @@
     a combined work that includes ChibiOS/RT, without being obliged to provide
     the source code for any proprietary components. See the file exception.txt
     for full details of how and when the exception can be applied.
-    
-    Modified by Dan Collins 16/05/2011
 */
 
-#include "ch.h"
-#include "hal.h"
+/**
+ * @file evtimer.h
+ * @brief Events Generator Timer structures and macros.
+ * @addtogroup event_timer
+ * @{
+ */
+
+#ifndef _EVTIMER_H_
+#define _EVTIMER_H_
 
 /**
- * @brief   PAL setup.
- * @details Digital I/O ports static configuration as defined in @p board.h.
- *          This variable is used by the HAL when initializing the PAL driver.
+ * @brief Event timer structure.
  */
-#if HAL_USE_PAL || defined(__DOXYGEN__)
-const PALConfig pal_default_config =
-{
-  {VAL_GPIOAODR, VAL_GPIOACRL, VAL_GPIOACRH},
-  {VAL_GPIOBODR, VAL_GPIOBCRL, VAL_GPIOBCRH},
-  {VAL_GPIOCODR, VAL_GPIOCCRL, VAL_GPIOCCRH},
-  {VAL_GPIODODR, VAL_GPIODCRL, VAL_GPIODCRH},
-  {VAL_GPIOEODR, VAL_GPIOECRL, VAL_GPIOECRH},
-};
+typedef struct {
+  VirtualTimer  et_vt;
+  EventSource   et_es;
+  systime_t     et_interval;
+} EvTimer;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+  void evtStart(EvTimer *etp);
+  void evtStop(EvTimer *etp);
+#ifdef __cplusplus
+}
 #endif
 
-/*
- * Early initialization code.
- * This initialization must be performed just after stack setup and before
- * any other initialization.
+/**
+ * @brief Initializes an @p EvTimer structure.
+ *
+ * @param etp the EvTimer structure to be initialized
+ * @param time the interval in system ticks
  */
-void __early_init(void) {
-
-  stm32_clock_init();
+#define evtInit(etp, time) {                                            \
+  chEvtInit(&(etp)->et_es);                                             \
+  (etp)->et_vt.vt_func = NULL;                                          \
+  (etp)->et_interval = (time);                                          \
 }
 
-/*
- * Board-specific initialization code.
- */
-void boardInit(void) {
-}
+#endif /* _EVTIMER_H_ */
+
+/** @} */
