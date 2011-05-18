@@ -1,0 +1,16 @@
+# Compiled Source #
+###################
+*.o
+*.bin
+*.hex
+*.elf
+
+# Log Files #
+#############
+*.dmp
+
+# Other Shit I Don't Want to Sync #
+###################################
+*.lst
+*.map
+/dep

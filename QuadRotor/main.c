@@ -22,42 +22,52 @@
     a combined work that includes ChibiOS/RT, without being obliged to provide
     the source code for any proprietary components. See the file exception.txt
     for full details of how and when the exception can be applied.
-    
-    Modified by Dan Collins 16/05/2011
 */
 
 #include "ch.h"
 #include "hal.h"
 
-/**
- * @brief   PAL setup.
- * @details Digital I/O ports static configuration as defined in @p board.h.
- *          This variable is used by the HAL when initializing the PAL driver.
- */
-#if HAL_USE_PAL || defined(__DOXYGEN__)
-const PALConfig pal_default_config =
-{
-  {VAL_GPIOAODR, VAL_GPIOACRL, VAL_GPIOACRH},
-  {VAL_GPIOBODR, VAL_GPIOBCRL, VAL_GPIOBCRH},
-  {VAL_GPIOCODR, VAL_GPIOCCRL, VAL_GPIOCCRH},
-  {VAL_GPIODODR, VAL_GPIODCRL, VAL_GPIODCRH},
-  {VAL_GPIOEODR, VAL_GPIOECRL, VAL_GPIOECRH},
-};
-#endif
-
 /*
- * Early initialization code.
- * This initialization must be performed just after stack setup and before
- * any other initialization.
+ * Red LED blinker thread, times are in milliseconds.
  */
-void __early_init(void) {
+static WORKING_AREA(waThread1, 128);
+static msg_t Thread1(void *arg) {
 
-  stm32_clock_init();
+  (void)arg;
+  while (TRUE) {
+    palClearPad(IOPORT2, GPIOB_LED1);
+    chThdSleepMilliseconds(500);
+    palSetPad(IOPORT3, GPIOB_LED1);
+    chThdSleepMilliseconds(500);
+  }
 }
 
 /*
- * Board-specific initialization code.
+ * Application entry point.
  */
-void boardInit(void) {
-}
+int main(void) {
 
+  /*
+   * System initializations.
+   * - HAL initialization, this also initializes the configured device drivers
+   *   and performs the board-specific initializations.
+   * - Kernel initialization, the main() function becomes a thread and the
+   *   RTOS is active.
+   */
+  halInit();
+  chSysInit();
+
+  /*
+   * Creates the blinker thread.
+   */
+  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+
+  /*
+   * Normal main() thread activity, in this demo it does nothing except
+   * sleeping in a loop and check the button state.
+   */
+  while (TRUE) {
+    chThdSleepMilliseconds(500);
+  }
+  return(0);
+}
