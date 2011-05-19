@@ -37,7 +37,7 @@ static msg_t Thread1(void *arg) {
   while (TRUE) {
     palClearPad(IOPORT2, GPIOB_LED1);
     chThdSleepMilliseconds(500);
-    palSetPad(IOPORT3, GPIOB_LED1);
+    palSetPad(IOPORT2, GPIOB_LED1);
     chThdSleepMilliseconds(500);
   }
 }
