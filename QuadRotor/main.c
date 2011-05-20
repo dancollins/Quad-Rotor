@@ -1,73 +1,106 @@
 /*
-    ChibiOS/RT - Copyright (C) 2006,2007,2008,2009,2010,2011 Giovanni Di Sirio.
-
-    This file is part of ChibiOS/RT.
-
-    ChibiOS/RT is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 3 of the License, or
-    (at your option) any later version.
-
-    ChibiOS/RT is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
-
-                                      ---
-
-    A special exception to the GPL can be applied should you wish to distribute
-    a combined work that includes ChibiOS/RT, without being obliged to provide
-    the source code for any proprietary components. See the file exception.txt
-    for full details of how and when the exception can be applied.
+	Quad Rotor Flight Controller
+	file: main.c
+	author: Dan Collins
+	
+	Interfaces with a number of sensors:
+		- 3 axis accelerometer
+		- 3 axis gyroscope
+		- Motor speed
+		- GPS
+	
+	And a number of inputs:
+		- Transceiver over serial
+			- Waypoints
+			- Altitude
+			- Attitude
+		
+	Processes the information in order to
+	Run the outputs:
+		- BLDC motor via ESC
+		* Transceiver over serial
+			* Debugging information
+			- Current 'job'
+			- Heading
+			- Altitude
+			- Attitude
+			
+	Note: The tasks have different states of completion as indicated by bullet points:
+		- Not yet started
+		* Work in progress
+		+ Functioning
+			
+	The aim is to provide a flight controller for a quad rotor platform for use in surveying.
 */
 
 #include "ch.h"
 #include "hal.h"
 
 /*
- * Red LED blinker thread, times are in milliseconds.
- */
-static WORKING_AREA(waThread1, 128);
-static msg_t Thread1(void *arg) {
+	Serial Console BaseChannel
+*/
+static BaseChannel *console;
 
-  (void)arg;
-  while (TRUE) {
-    palClearPad(IOPORT2, GPIOB_LED1);
-    chThdSleepMilliseconds(500);
-    palSetPad(IOPORT2, GPIOB_LED1);
-    chThdSleepMilliseconds(500);
-  }
+/*
+	Blinky LED Thread
+*/
+static WORKING_AREA(waBlinky, 128); // Working area for the thread
+
+static msg_t Blinky(void *arg) { // Blinky LED thread
+	
+	(void)arg; // Don't need arguments...
+	
+	while (1) {
+		palClearPad(IOPORT2, GPIOB_LED1); // Turn LED on
+		chThdSleepMilliseconds(500); // Wait 500ms
+		palSetPad(IOPORT2, GPIOB_LED1); // Turn LED off
+		chThdSleepMilliseconds(500); // Wait 500ms
+	}
 }
 
 /*
- * Application entry point.
- */
+	serial_print("message");
+	
+	Takes a string, and prints over serial port to terminal
+*/
+void serial_print(const char *msgp) {
+	while (*msgp) {
+		chIOPut(console, *msgp++); // Print character of message
+	}
+}
+
+/*
+	serial_println("message");
+	
+	Takes a string, and prints over serial port to terminal with a line feed at the end
+*/
+void serial_println(const char *msgp) {
+	serial_print(*msgp);
+	chIOPut(console, '\n');
+}
+
+/*
+	Application entry point.
+*/
 int main(void) {
+	/*
+	* System initializations.
+	* - HAL initialization, this also initializes the configured device drivers
+	*   and performs the board-specific initializations.
+	* - Kernel initialization, the main() function becomes a thread and the
+	*   RTOS is active.
+	*/
+	halInit();
+	chSysInit();
+	
+	sdStart(&SD1, NULL); // Start serial driver on UART1
 
-  /*
-   * System initializations.
-   * - HAL initialization, this also initializes the configured device drivers
-   *   and performs the board-specific initializations.
-   * - Kernel initialization, the main() function becomes a thread and the
-   *   RTOS is active.
-   */
-  halInit();
-  chSysInit();
+	chThdCreateStatic(waBlinky, sizeof(waBlinky), NORMALPRIO, Blinky, NULL); // Create blinky LED thread
 
-  /*
-   * Creates the blinker thread.
-   */
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
-
-  /*
-   * Normal main() thread activity, in this demo it does nothing except
-   * sleeping in a loop and check the button state.
-   */
-  while (TRUE) {
-    chThdSleepMilliseconds(500);
-  }
-  return(0);
+	// This is where the main thread actually starts...
+	while (1) {
+		chThdSleepMilliseconds(500); // Waste time!  The 'main' thread in this case is the blinky LED
+		//serial_println("Hello, World!"); // Test String
+	}
+	return(0);
 }

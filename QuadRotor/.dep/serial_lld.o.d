@@ -1,4 +1,6 @@
-main.o: main.c chibios/os/kernel/include/ch.h chconf.h \
+chibios/os/hal/platforms/STM32/serial_lld.o: \
+ chibios/os/hal/platforms/STM32/serial_lld.c \
+ chibios/os/kernel/include/ch.h chconf.h \
  chibios/os/ports/GCC/ARMCMx/chtypes.h \
  /home/dan/arm-cs-tools/lib/gcc/arm-none-eabi/4.5.1/include/stddef.h \
  /home/dan/arm-cs-tools/lib/gcc/arm-none-eabi/4.5.1/include/stdint.h \
