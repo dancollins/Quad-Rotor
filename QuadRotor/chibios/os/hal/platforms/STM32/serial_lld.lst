@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccmv0gOF.s 			page 1
+ARM GAS  /tmp/ccWEGza2.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
   51 0014 AFF30080 		.section	.text.VectorD4,"ax",%progbits
   51      AFF30080 
   51      AFF30080 
-ARM GAS  /tmp/ccmv0gOF.s 			page 2
+ARM GAS  /tmp/ccWEGza2.s 			page 2
 
 
   52              		.align	2
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  106 002c 18BF     		it	ne
  107 002e 4021     		movne	r1, #64
  108              	.LVL7:
-ARM GAS  /tmp/ccmv0gOF.s 			page 3
+ARM GAS  /tmp/ccWEGza2.s 			page 3
 
 
  109              		.loc 1 144 0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  163              		.loc 1 171 0
  164 0072 3380     		strh	r3, [r6, #0]	@ movhi
  165              	.LVL18:
-ARM GAS  /tmp/ccmv0gOF.s 			page 4
+ARM GAS  /tmp/ccWEGza2.s 			page 4
 
 
  166              	.L3:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  220              	.LVL26:
  221              		.thumb
  222 00aa ECE7     		b	.L10
-ARM GAS  /tmp/ccmv0gOF.s 			page 5
+ARM GAS  /tmp/ccWEGza2.s 			page 5
 
 
  223              	.LVL27:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  277              		.size	VectorD4, .-VectorD4
  278              		.section	.text.sd_lld_init,"ax",%progbits
  279              		.align	2
-ARM GAS  /tmp/ccmv0gOF.s 			page 6
+ARM GAS  /tmp/ccWEGza2.s 			page 6
 
 
  280              		.p2align 4,,15
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  332              		.cfi_offset 14, -4
  333              		.cfi_offset 5, -8
  334              		.cfi_offset 4, -12
-ARM GAS  /tmp/ccmv0gOF.s 			page 7
+ARM GAS  /tmp/ccWEGza2.s 			page 7
 
 
  335              		.cfi_offset 3, -16
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  389              		.loc 1 110 0
  390 004e 1882     		strh	r0, [r3, #16]	@ movhi
  391              		.loc 1 112 0
-ARM GAS  /tmp/ccmv0gOF.s 			page 8
+ARM GAS  /tmp/ccWEGza2.s 			page 8
 
 
  392 0050 0020     		movs	r0, #0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  444 0000 037B     		ldrb	r3, [r0, #12]	@ zero_extendqisi2
  445 0002 022B     		cmp	r3, #2
  446 0004 00D0     		beq	.L30
-ARM GAS  /tmp/ccmv0gOF.s 			page 9
+ARM GAS  /tmp/ccWEGza2.s 			page 9
 
 
  447              	.L28:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  499              		.type	default_config, %object
  500              		.size	default_config, 12
  501              	default_config:
-ARM GAS  /tmp/ccmv0gOF.s 			page 10
+ARM GAS  /tmp/ccWEGza2.s 			page 10
 
 
  502 0000 00960000 		.word	38400
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  556 0077 54       		.byte	0x54
  557 0078 00000000 		.4byte	0x0
  558 007c 00000000 		.4byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 11
+ARM GAS  /tmp/ccWEGza2.s 			page 11
 
 
  559              	.LLST5:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  613 0111 50       		.byte	0x50
  614 0112 00000000 		.4byte	0x0
  615 0116 00000000 		.4byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 12
+ARM GAS  /tmp/ccWEGza2.s 			page 12
 
 
  616              	.LLST9:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  670 01a7 00000000 		.4byte	.LFB43
  671 01ab 02000000 		.4byte	.LCFI2
  672 01af 0200     		.2byte	0x2
-ARM GAS  /tmp/ccmv0gOF.s 			page 13
+ARM GAS  /tmp/ccWEGza2.s 			page 13
 
 
  673 01b1 7D       		.byte	0x7d
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  727              		.file 2 "/home/dan/arm-cs-tools/lib/gcc/arm-none-eabi/4.5.1/include/stddef.h"
  728              		.file 3 "/home/dan/arm-cs-tools/lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/include/stdi
  729              		.file 4 "chibios/os/ports/GCC/ARMCMx/chtypes.h"
-ARM GAS  /tmp/ccmv0gOF.s 			page 14
+ARM GAS  /tmp/ccWEGza2.s 			page 14
 
 
  730              		.file 5 "chibios/os/kernel/include/chlists.h"
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  784 005c 02       		.byte	0x2
  785 005d 05       		.byte	0x5
  786 005e 18050000 		.4byte	.LASF5
-ARM GAS  /tmp/ccmv0gOF.s 			page 15
+ARM GAS  /tmp/ccWEGza2.s 			page 15
 
 
  787 0062 03       		.uleb128 0x3
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  841 00ce 49000000 		.4byte	0x49
  842 00d2 03       		.uleb128 0x3
  843 00d3 4A040000 		.4byte	.LASF18
-ARM GAS  /tmp/ccmv0gOF.s 			page 16
+ARM GAS  /tmp/ccWEGza2.s 			page 16
 
 
  844 00d7 04       		.byte	0x4
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  898 0146 04       		.uleb128 0x4
  899 0147 06       		.uleb128 0x6
  900 0148 D3000000 		.4byte	.LASF27
-ARM GAS  /tmp/ccmv0gOF.s 			page 17
+ARM GAS  /tmp/ccWEGza2.s 			page 17
 
 
  901 014c 06       		.byte	0x6
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  955 01a9 06       		.uleb128 0x6
  956 01aa 23020000 		.4byte	.LASF34
  957 01ae 06       		.byte	0x6
-ARM GAS  /tmp/ccmv0gOF.s 			page 18
+ARM GAS  /tmp/ccWEGza2.s 			page 18
 
 
  958 01af 53       		.byte	0x53
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1012 020c 09000000 		.4byte	.LASF40
  1013 0210 06       		.byte	0x6
  1014 0211 98       		.byte	0x98
-ARM GAS  /tmp/ccmv0gOF.s 			page 19
+ARM GAS  /tmp/ccWEGza2.s 			page 19
 
 
  1015 0212 DD000000 		.4byte	0xdd
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1069 0272 23       		.byte	0x23
  1070 0273 00       		.uleb128 0x0
  1071 0274 00       		.byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 20
+ARM GAS  /tmp/ccWEGza2.s 			page 20
 
 
  1072 0275 03       		.uleb128 0x3
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1126 02db 39       		.byte	0x39
  1127 02dc 85020000 		.4byte	0x285
  1128 02e0 02       		.byte	0x2
-ARM GAS  /tmp/ccmv0gOF.s 			page 21
+ARM GAS  /tmp/ccWEGza2.s 			page 21
 
 
  1129 02e1 23       		.byte	0x23
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1183 033a 0A       		.uleb128 0xa
  1184 033b FE000000 		.4byte	0xfe
  1185 033f 05       		.uleb128 0x5
-ARM GAS  /tmp/ccmv0gOF.s 			page 22
+ARM GAS  /tmp/ccWEGza2.s 			page 22
 
 
  1186 0340 BA060000 		.4byte	.LASF47
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1240 03a6 02       		.byte	0x2
  1241 03a7 23       		.byte	0x23
  1242 03a8 0C       		.uleb128 0xc
-ARM GAS  /tmp/ccmv0gOF.s 			page 23
+ARM GAS  /tmp/ccWEGza2.s 			page 23
 
 
  1243 03a9 00       		.byte	0x0
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1297 040f 06       		.uleb128 0x6
  1298 0410 02070000 		.4byte	.LASF59
  1299 0414 0B       		.byte	0xb
-ARM GAS  /tmp/ccmv0gOF.s 			page 24
+ARM GAS  /tmp/ccWEGza2.s 			page 24
 
 
  1300 0415 3C       		.byte	0x3c
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1354 0481 4C       		.byte	0x4c
  1355 0482 F3040000 		.4byte	0x4f3
  1356 0486 02       		.byte	0x2
-ARM GAS  /tmp/ccmv0gOF.s 			page 25
+ARM GAS  /tmp/ccWEGza2.s 			page 25
 
 
  1357 0487 23       		.byte	0x23
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1411 04e7 12       		.uleb128 0x12
  1412 04e8 ED040000 		.4byte	0x4ed
  1413 04ec 00       		.byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 26
+ARM GAS  /tmp/ccWEGza2.s 			page 26
 
 
  1414 04ed 09       		.uleb128 0x9
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1468 0565 91020000 		.4byte	0x291
  1469 0569 00       		.byte	0x0
  1470 056a 09       		.uleb128 0x9
-ARM GAS  /tmp/ccmv0gOF.s 			page 27
+ARM GAS  /tmp/ccWEGza2.s 			page 27
 
 
  1471 056b 04       		.byte	0x4
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1525 05e9 12       		.uleb128 0x12
  1526 05ea FE000000 		.4byte	0xfe
  1527 05ee 00       		.byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 28
+ARM GAS  /tmp/ccWEGza2.s 			page 28
 
 
  1528 05ef 09       		.uleb128 0x9
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1582 065e 16       		.uleb128 0x16
  1583 065f 7E060000 		.4byte	.LASF85
  1584 0663 02       		.sleb128 2
-ARM GAS  /tmp/ccmv0gOF.s 			page 29
+ARM GAS  /tmp/ccWEGza2.s 			page 29
 
 
  1585 0664 16       		.uleb128 0x16
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1639 06d0 16       		.uleb128 0x16
  1640 06d1 45000000 		.4byte	.LASF104
  1641 06d5 15       		.sleb128 21
-ARM GAS  /tmp/ccmv0gOF.s 			page 30
+ARM GAS  /tmp/ccWEGza2.s 			page 30
 
 
  1642 06d6 16       		.uleb128 0x16
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1696 0742 16       		.uleb128 0x16
  1697 0743 AF020000 		.4byte	.LASF123
  1698 0747 28       		.sleb128 40
-ARM GAS  /tmp/ccmv0gOF.s 			page 31
+ARM GAS  /tmp/ccWEGza2.s 			page 31
 
 
  1699 0748 16       		.uleb128 0x16
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1753 07ad 18       		.uleb128 0x18
  1754 07ae D9070000 		.4byte	.LASF129
  1755 07b2 0E       		.byte	0xe
-ARM GAS  /tmp/ccmv0gOF.s 			page 32
+ARM GAS  /tmp/ccWEGza2.s 			page 32
 
 
  1756 07b3 FD03     		.2byte	0x3fd
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1810 081a 23       		.byte	0x23
  1811 081b 00       		.uleb128 0x0
  1812 081c 18       		.uleb128 0x18
-ARM GAS  /tmp/ccmv0gOF.s 			page 33
+ARM GAS  /tmp/ccWEGza2.s 			page 33
 
 
  1813 081d 52040000 		.4byte	.LASF134
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1867 0883 0E       		.uleb128 0xe
  1868 0884 0E       		.uleb128 0xe
  1869 0885 43523200 		.ascii	"CR2\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 34
+ARM GAS  /tmp/ccWEGza2.s 			page 34
 
 
  1870 0889 0E       		.byte	0xe
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1924 08ed 0F       		.byte	0xf
  1925 08ee 5E       		.byte	0x5e
  1926 08ef 06090000 		.4byte	0x906
-ARM GAS  /tmp/ccmv0gOF.s 			page 35
+ARM GAS  /tmp/ccWEGza2.s 			page 35
 
 
  1927 08f3 16       		.uleb128 0x16
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  1981 0959 06090000 		.4byte	0x906
  1982 095d 02       		.byte	0x2
  1983 095e 23       		.byte	0x23
-ARM GAS  /tmp/ccmv0gOF.s 			page 36
+ARM GAS  /tmp/ccWEGza2.s 			page 36
 
 
  1984 095f 0C       		.uleb128 0xc
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2038 09ba 00       		.uleb128 0x0
  2039 09bb 06       		.uleb128 0x6
  2040 09bc C5000000 		.4byte	.LASF155
-ARM GAS  /tmp/ccmv0gOF.s 			page 37
+ARM GAS  /tmp/ccWEGza2.s 			page 37
 
 
  2041 09c0 10       		.byte	0x10
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2095 0a20 6A050000 		.4byte	0x56a
  2096 0a24 02       		.byte	0x2
  2097 0a25 23       		.byte	0x23
-ARM GAS  /tmp/ccmv0gOF.s 			page 38
+ARM GAS  /tmp/ccWEGza2.s 			page 38
 
 
  2098 0a26 08       		.uleb128 0x8
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2152 0a83 F1090000 		.4byte	0x9f1
  2153 0a87 1A       		.uleb128 0x1a
  2154 0a88 49000000 		.4byte	0x49
-ARM GAS  /tmp/ccmv0gOF.s 			page 39
+ARM GAS  /tmp/ccWEGza2.s 			page 39
 
 
  2155 0a8c 970A0000 		.4byte	0xa97
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2209 0af8 8B       		.byte	0x8b
  2210 0af9 62000000 		.4byte	0x62
  2211 0afd 1F       		.uleb128 0x1f
-ARM GAS  /tmp/ccmv0gOF.s 			page 40
+ARM GAS  /tmp/ccWEGza2.s 			page 40
 
 
  2212 0afe 73747300 		.ascii	"sts\000"
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2266 0b66 62000000 		.4byte	0x62
  2267 0b6a 1F       		.uleb128 0x1f
  2268 0b6b 737200   		.ascii	"sr\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 41
+ARM GAS  /tmp/ccWEGza2.s 			page 41
 
 
  2269 0b6e 01       		.byte	0x1
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2323 0bda 02       		.byte	0x2
  2324 0bdb 7D       		.byte	0x7d
  2325 0bdc 00       		.sleb128 0
-ARM GAS  /tmp/ccmv0gOF.s 			page 42
+ARM GAS  /tmp/ccWEGza2.s 			page 42
 
 
  2326 0bdd F00B0000 		.4byte	0xbf0
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2380 0c5a 2B       		.uleb128 0x2b
  2381 0c5b E80A0000 		.4byte	0xae8
  2382 0c5f 55000000 		.4byte	.LLST3
-ARM GAS  /tmp/ccmv0gOF.s 			page 43
+ARM GAS  /tmp/ccWEGza2.s 			page 43
 
 
  2383 0c63 2B       		.uleb128 0x2b
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2437 0cf9 4B010000 		.4byte	.LLST11
  2438 0cfd 00       		.byte	0x0
  2439 0cfe 2C       		.uleb128 0x2c
-ARM GAS  /tmp/ccmv0gOF.s 			page 44
+ARM GAS  /tmp/ccWEGza2.s 			page 44
 
 
  2440 0cff C2000000 		.4byte	.LBB54
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2494 0d88 00       		.byte	0x0
  2495 0d89 00       		.byte	0x0
  2496 0d8a 35       		.uleb128 0x35
-ARM GAS  /tmp/ccmv0gOF.s 			page 45
+ARM GAS  /tmp/ccWEGza2.s 			page 45
 
 
  2497 0d8b 01       		.byte	0x1
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2551 0e04 11       		.byte	0x11
  2552 0e05 ED06     		.2byte	0x6ed
  2553 0e07 DC0D0000 		.4byte	0xddc
-ARM GAS  /tmp/ccmv0gOF.s 			page 46
+ARM GAS  /tmp/ccWEGza2.s 			page 46
 
 
  2554 0e0b 01       		.byte	0x1
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2608 0029 49       		.uleb128 0x49
  2609 002a 13       		.uleb128 0x13
  2610 002b 00       		.byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 47
+ARM GAS  /tmp/ccWEGza2.s 			page 47
 
 
  2611 002c 00       		.byte	0x0
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2665 0062 0A       		.uleb128 0xa
  2666 0063 00       		.byte	0x0
  2667 0064 00       		.byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 48
+ARM GAS  /tmp/ccWEGza2.s 			page 48
 
 
  2668 0065 08       		.uleb128 0x8
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2722 009b 0B       		.uleb128 0xb
  2723 009c 0B       		.uleb128 0xb
  2724 009d 3A       		.uleb128 0x3a
-ARM GAS  /tmp/ccmv0gOF.s 			page 49
+ARM GAS  /tmp/ccWEGza2.s 			page 49
 
 
  2725 009e 0B       		.uleb128 0xb
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2779 00d4 13       		.uleb128 0x13
  2780 00d5 00       		.byte	0x0
  2781 00d6 00       		.byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 50
+ARM GAS  /tmp/ccWEGza2.s 			page 50
 
 
  2782 00d7 12       		.uleb128 0x12
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2836 010d 3A       		.uleb128 0x3a
  2837 010e 0B       		.uleb128 0xb
  2838 010f 3B       		.uleb128 0x3b
-ARM GAS  /tmp/ccmv0gOF.s 			page 51
+ARM GAS  /tmp/ccWEGza2.s 			page 51
 
 
  2839 0110 05       		.uleb128 0x5
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2893 0146 03       		.uleb128 0x3
  2894 0147 0E       		.uleb128 0xe
  2895 0148 3A       		.uleb128 0x3a
-ARM GAS  /tmp/ccmv0gOF.s 			page 52
+ARM GAS  /tmp/ccWEGza2.s 			page 52
 
 
  2896 0149 0B       		.uleb128 0xb
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  2950 017f 13       		.uleb128 0x13
  2951 0180 00       		.byte	0x0
  2952 0181 00       		.byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 53
+ARM GAS  /tmp/ccWEGza2.s 			page 53
 
 
  2953 0182 21       		.uleb128 0x21
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3007 01b8 11       		.uleb128 0x11
  3008 01b9 01       		.uleb128 0x1
  3009 01ba 12       		.uleb128 0x12
-ARM GAS  /tmp/ccmv0gOF.s 			page 54
+ARM GAS  /tmp/ccWEGza2.s 			page 54
 
 
  3010 01bb 01       		.uleb128 0x1
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3064 01f1 00       		.byte	0x0
  3065 01f2 00       		.byte	0x0
  3066 01f3 2A       		.uleb128 0x2a
-ARM GAS  /tmp/ccmv0gOF.s 			page 55
+ARM GAS  /tmp/ccWEGza2.s 			page 55
 
 
  3067 01f4 1D       		.uleb128 0x1d
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3121 022a 2F       		.uleb128 0x2f
  3122 022b 2E       		.uleb128 0x2e
  3123 022c 00       		.byte	0x0
-ARM GAS  /tmp/ccmv0gOF.s 			page 56
+ARM GAS  /tmp/ccWEGza2.s 			page 56
 
 
  3124 022d 3F       		.uleb128 0x3f
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3178 0263 00       		.byte	0x0
  3179 0264 00       		.byte	0x0
  3180 0265 32       		.uleb128 0x32
-ARM GAS  /tmp/ccmv0gOF.s 			page 57
+ARM GAS  /tmp/ccWEGza2.s 			page 57
 
 
  3181 0266 05       		.uleb128 0x5
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3235 029c 0A       		.uleb128 0xa
  3236 029d 01       		.uleb128 0x1
  3237 029e 13       		.uleb128 0x13
-ARM GAS  /tmp/ccmv0gOF.s 			page 58
+ARM GAS  /tmp/ccWEGza2.s 			page 58
 
 
  3238 029f 00       		.byte	0x0
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3292 02d5 03       		.uleb128 0x3
  3293 02d6 08       		.uleb128 0x8
  3294 02d7 3A       		.uleb128 0x3a
-ARM GAS  /tmp/ccmv0gOF.s 			page 59
+ARM GAS  /tmp/ccWEGza2.s 			page 59
 
 
  3295 02d8 0B       		.uleb128 0xb
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3335      325F7400 
  3336 003e 86000000 		.4byte	0x86
  3337 0042 75696E74 		.ascii	"uint32_t\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 60
+ARM GAS  /tmp/ccWEGza2.s 			page 60
 
 
  3337      33325F74 
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3367 0108 636F6E74 		.ascii	"context\000"
  3367      65787400 
  3368 0110 B0020000 		.4byte	0x2b0
-ARM GAS  /tmp/ccmv0gOF.s 			page 61
+ARM GAS  /tmp/ccWEGza2.s 			page 61
 
 
  3369 0114 696E7463 		.ascii	"intctx\000"
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3395      756500
  3396 01d9 04050000 		.4byte	0x504
  3397 01dd 4F757470 		.ascii	"OutputQueue\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 62
+ARM GAS  /tmp/ccWEGza2.s 			page 62
 
 
  3397      75745175 
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3428 001c F0000000 		.4byte	.LFE41-.LFB41
  3429 0020 00000000 		.4byte	.LFB42
  3430 0024 26000000 		.4byte	.LFE42-.LFB42
-ARM GAS  /tmp/ccmv0gOF.s 			page 63
+ARM GAS  /tmp/ccWEGza2.s 			page 63
 
 
  3431 0028 00000000 		.4byte	.LFB43
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3485 00b8 00000000 		.4byte	0x0
  3486 00bc 00000000 		.4byte	0x0
  3487              		.section	.debug_str,"MS",%progbits,1
-ARM GAS  /tmp/ccmv0gOF.s 			page 64
+ARM GAS  /tmp/ccWEGza2.s 			page 64
 
 
  3488              	.LASF84:
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3513      5F495251 
  3513      6E00
  3514              	.LASF175:
-ARM GAS  /tmp/ccmv0gOF.s 			page 65
+ARM GAS  /tmp/ccWEGza2.s 			page 65
 
 
  3515 0098 49544D5F 		.ascii	"ITM_RxBuffer\000"
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3544              	.LASF133:
  3545 0123 5243435F 		.ascii	"RCC_TypeDef\000"
  3545      54797065 
-ARM GAS  /tmp/ccmv0gOF.s 			page 66
+ARM GAS  /tmp/ccWEGza2.s 			page 66
 
 
  3545      44656600 
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3573      65756500 
  3574              	.LASF81:
  3575 01b9 50656E64 		.ascii	"PendSV_IRQn\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 67
+ARM GAS  /tmp/ccWEGza2.s 			page 67
 
 
  3575      53565F49 
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3601      756500
  3602              	.LASF181:
  3603 0252 73645F6C 		.ascii	"sd_lld_init\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 68
+ARM GAS  /tmp/ccWEGza2.s 			page 68
 
 
  3603      6C645F69 
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3627      6C617466 
  3628              	.LASF16:
  3629 0309 746D6F64 		.ascii	"tmode_t\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 69
+ARM GAS  /tmp/ccWEGza2.s 			page 69
 
 
  3629      655F7400 
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3654              	.LASF50:
  3655 03a2 4D757465 		.ascii	"Mutex\000"
  3655      7800
-ARM GAS  /tmp/ccmv0gOF.s 			page 70
+ARM GAS  /tmp/ccWEGza2.s 			page 70
 
 
  3656              	.LASF178:
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3682      3000
  3683              	.LASF135:
  3684 045c 52455345 		.ascii	"RESERVED1\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 71
+ARM GAS  /tmp/ccWEGza2.s 			page 71
 
 
  3684      52564544 
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3710      48505F43 
  3710      414E315F 
  3710      54585F49 
-ARM GAS  /tmp/ccmv0gOF.s 			page 72
+ARM GAS  /tmp/ccWEGza2.s 			page 72
 
 
  3710      52516E00 
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3740 0591 705F6570 		.ascii	"p_epending\000"
  3740      656E6469 
  3740      6E6700
-ARM GAS  /tmp/ccmv0gOF.s 			page 73
+ARM GAS  /tmp/ccWEGza2.s 			page 73
 
 
  3741              	.LASF143:
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3766 062a 43414E31 		.ascii	"CAN1_SCE_IRQn\000"
  3766      5F534345 
  3766      5F495251 
-ARM GAS  /tmp/ccmv0gOF.s 			page 74
+ARM GAS  /tmp/ccWEGza2.s 			page 74
 
 
  3766      6E00
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3794 06c4 49324332 		.ascii	"I2C2_EV_IRQn\000"
  3794      5F45565F 
  3794      4952516E 
-ARM GAS  /tmp/ccmv0gOF.s 			page 75
+ARM GAS  /tmp/ccWEGza2.s 			page 75
 
 
  3794      00
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3824      6A7000
  3825              	.LASF100:
  3826 0758 444D4131 		.ascii	"DMA1_Channel7_IRQn\000"
-ARM GAS  /tmp/ccmv0gOF.s 			page 76
+ARM GAS  /tmp/ccWEGza2.s 			page 76
 
 
  3826      5F436861 
@@ -4558,29 +4558,29 @@ ARM GAS  /tmp/ccmv0gOF.s 			page 1
  3854      315F4952 
  3854      516E00
  3855              		.ident	"GCC: (GNU) 4.5.1"
-ARM GAS  /tmp/ccmv0gOF.s 			page 77
+ARM GAS  /tmp/ccWEGza2.s 			page 77
 
 
-ARM GAS  /tmp/ccmv0gOF.s 			page 78
+ARM GAS  /tmp/ccWEGza2.s 			page 78
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 serial_lld.c
-     /tmp/ccmv0gOF.s:24     .text.notify1:0000000000000000 $t
-     /tmp/ccmv0gOF.s:29     .text.notify1:0000000000000000 notify1
-     /tmp/ccmv0gOF.s:52     .text.VectorD4:0000000000000000 $t
-     /tmp/ccmv0gOF.s:58     .text.VectorD4:0000000000000000 VectorD4
+     /tmp/ccWEGza2.s:24     .text.notify1:0000000000000000 $t
+     /tmp/ccWEGza2.s:29     .text.notify1:0000000000000000 notify1
+     /tmp/ccWEGza2.s:52     .text.VectorD4:0000000000000000 $t
+     /tmp/ccWEGza2.s:58     .text.VectorD4:0000000000000000 VectorD4
                             *COM*:0000000000000074 SD1
-     /tmp/ccmv0gOF.s:270    .text.VectorD4:00000000000000e8 $d
-     /tmp/ccmv0gOF.s:279    .text.sd_lld_init:0000000000000000 $t
-     /tmp/ccmv0gOF.s:285    .text.sd_lld_init:0000000000000000 sd_lld_init
-     /tmp/ccmv0gOF.s:314    .text.sd_lld_start:0000000000000000 $t
-     /tmp/ccmv0gOF.s:320    .text.sd_lld_start:0000000000000000 sd_lld_start
-     /tmp/ccmv0gOF.s:498    .rodata.default_config:0000000000000000 .LANCHOR0
-     /tmp/ccmv0gOF.s:429    .text.sd_lld_stop:0000000000000000 $t
-     /tmp/ccmv0gOF.s:435    .text.sd_lld_stop:0000000000000000 sd_lld_stop
-     /tmp/ccmv0gOF.s:497    .rodata.default_config:0000000000000000 $d
-     /tmp/ccmv0gOF.s:501    .rodata.default_config:0000000000000000 default_config
+     /tmp/ccWEGza2.s:270    .text.VectorD4:00000000000000e8 $d
+     /tmp/ccWEGza2.s:279    .text.sd_lld_init:0000000000000000 $t
+     /tmp/ccWEGza2.s:285    .text.sd_lld_init:0000000000000000 sd_lld_init
+     /tmp/ccWEGza2.s:314    .text.sd_lld_start:0000000000000000 $t
+     /tmp/ccWEGza2.s:320    .text.sd_lld_start:0000000000000000 sd_lld_start
+     /tmp/ccWEGza2.s:498    .rodata.default_config:0000000000000000 .LANCHOR0
+     /tmp/ccWEGza2.s:429    .text.sd_lld_stop:0000000000000000 $t
+     /tmp/ccWEGza2.s:435    .text.sd_lld_stop:0000000000000000 sd_lld_stop
+     /tmp/ccWEGza2.s:497    .rodata.default_config:0000000000000000 $d
+     /tmp/ccWEGza2.s:501    .rodata.default_config:0000000000000000 default_config
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS

@@ -36,10 +36,7 @@
 #include "ch.h"
 #include "hal.h"
 
-/*
-	Serial Console BaseChannel
-*/
-static BaseChannel *console;
+#include "motor.h"
 
 /*
 	Blinky LED Thread
@@ -59,24 +56,17 @@ static msg_t Blinky(void *arg) { // Blinky LED thread
 }
 
 /*
-	serial_print("message");
-	
-	Takes a string, and prints over serial port to terminal
-*/
-void serial_print(const char *msgp) {
-	while (*msgp) {
-		chIOPut(console, *msgp++); // Print character of message
-	}
+ * Serial Output
+ */
+void serial_print(BaseChannel *chp, const char *msg) {
+  while (*msg)
+    chIOPut(chp, *msg++);
 }
 
-/*
-	serial_println("message");
-	
-	Takes a string, and prints over serial port to terminal with a line feed at the end
-*/
-void serial_println(const char *msgp) {
-	serial_print(*msgp);
-	chIOPut(console, '\n');
+void serial_println(BaseChannel *chp, const char *msg) {
+	serial_print(chp, msg);
+	chIOPut(chp, '\r');
+	chIOPut(chp, '\n');
 }
 
 /*
@@ -93,14 +83,14 @@ int main(void) {
 	halInit();
 	chSysInit();
 	
-	sdStart(&SD1, NULL); // Start serial driver on UART1
+	sdStart(&SD1, NULL);
 
 	chThdCreateStatic(waBlinky, sizeof(waBlinky), NORMALPRIO, Blinky, NULL); // Create blinky LED thread
 
 	// This is where the main thread actually starts...
 	while (1) {
+		serial_println((BaseChannel *)&SD1, "Hello, World!");
 		chThdSleepMilliseconds(500); // Waste time!  The 'main' thread in this case is the blinky LED
-		//serial_println("Hello, World!"); // Test String
 	}
 	return(0);
 }

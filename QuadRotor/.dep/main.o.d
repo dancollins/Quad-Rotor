@@ -31,7 +31,7 @@ main.o: main.c chibios/os/kernel/include/ch.h chconf.h \
  chibios/os/hal/include/can.h chibios/os/hal/include/mac.h \
  chibios/os/hal/include/pwm.h chibios/os/hal/include/serial.h \
  chibios/os/hal/platforms/STM32/serial_lld.h chibios/os/hal/include/spi.h \
- chibios/os/hal/include/uart.h chibios/os/hal/include/mmc_spi.h
+ chibios/os/hal/include/uart.h chibios/os/hal/include/mmc_spi.h motor.h
 
 chibios/os/kernel/include/ch.h:
 
@@ -138,3 +138,5 @@ chibios/os/hal/include/spi.h:
 chibios/os/hal/include/uart.h:
 
 chibios/os/hal/include/mmc_spi.h:
+
+motor.h:
