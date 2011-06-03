@@ -1,7 +1,7 @@
-ARM GAS  /tmp/ccgS6Uzk.s 			page 1
+ARM GAS  /tmp/ccgxM8Ud.s 			page 1
 
 
-   1              	# 1 "../../os/ports/GCC/ARMCMx/crt0_v7m.s"
+   1              	# 1 "chibios/os/ports/GCC/ARMCMx/crt0_v7m.s"
    1              	/*
    0              	
    0              	
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccgS6Uzk.s 			page 1
   52              	        .weak   ResetHandler
   53              	ResetHandler:
   54              	        /*
-ARM GAS  /tmp/ccgS6Uzk.s 			page 2
+ARM GAS  /tmp/ccgxM8Ud.s 			page 2
 
 
   55              	         * Interrupts are globally masked initially.
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccgS6Uzk.s 			page 1
  109              	
  110              	/*
  111              	 * Default main exit code, just a loop.
-ARM GAS  /tmp/ccgS6Uzk.s 			page 3
+ARM GAS  /tmp/ccgxM8Ud.s 			page 3
 
 
  112              	 * It is a weak symbol, the application code can redefine the behavior.
@@ -144,22 +144,22 @@ ARM GAS  /tmp/ccgS6Uzk.s 			page 1
  130      00000000 
  130      00000000 
  130      00000000 
-ARM GAS  /tmp/ccgS6Uzk.s 			page 4
+ARM GAS  /tmp/ccgxM8Ud.s 			page 4
 
 
 DEFINED SYMBOLS
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:37     *ABS*:00000000 CONTROL_MODE_PRIVILEGED
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:38     *ABS*:00000001 CONTROL_MODE_UNPRIVILEGED
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:39     *ABS*:00000000 CONTROL_USE_MSP
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:40     *ABS*:00000002 CONTROL_USE_PSP
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:43     .text:00000000 $t
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:53     .text:00000000 ResetHandler
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:129    .text:00000048 __early_init
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:80     .text:00000016 dloop
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:93     .text:0000002a bloop
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:117    .text:00000046 _main_exit_handler
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:118    .text:00000046 .loop
-../../os/ports/GCC/ARMCMx/crt0_v7m.s:130    .text:0000004a $d
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:37     *ABS*:0000000000000000 CONTROL_MODE_PRIVILEGED
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:38     *ABS*:0000000000000001 CONTROL_MODE_UNPRIVILEGED
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:39     *ABS*:0000000000000000 CONTROL_USE_MSP
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:40     *ABS*:0000000000000002 CONTROL_USE_PSP
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:43     .text:0000000000000000 $t
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:53     .text:0000000000000000 ResetHandler
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:129    .text:0000000000000048 __early_init
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:80     .text:0000000000000016 dloop
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:93     .text:000000000000002a bloop
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:117    .text:0000000000000046 _main_exit_handler
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:118    .text:0000000000000046 .loop
+chibios/os/ports/GCC/ARMCMx/crt0_v7m.s:130    .text:000000000000004a $d
 
 UNDEFINED SYMBOLS
 __ram_end__

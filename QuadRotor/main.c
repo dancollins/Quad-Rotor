@@ -65,7 +65,6 @@ void serial_print(BaseChannel *chp, const char *msg) {
 
 void serial_println(BaseChannel *chp, const char *msg) {
 	serial_print(chp, msg);
-	chIOPut(chp, '\r');
 	chIOPut(chp, '\n');
 }
 

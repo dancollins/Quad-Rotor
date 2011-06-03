@@ -21,7 +21,7 @@ main.o: main.c chibios/os/kernel/include/ch.h chconf.h \
  chibios/os/kernel/include/chqueues.h \
  chibios/os/kernel/include/chstreams.h chibios/os/kernel/include/chioch.h \
  chibios/os/kernel/include/chfiles.h chibios/os/kernel/include/chdebug.h \
- chibios/os/hal/include/hal.h board.h halconf.h mcuconf.h \
+ chibios/os/hal/include/hal.h chibios/board/board.h halconf.h mcuconf.h \
  chibios/os/hal/platforms/STM32/hal_lld.h \
  chibios/os/hal/platforms/STM32/hal_lld_f103.h \
  chibios/os/hal/platforms/STM32/stm32f10x.h \
@@ -101,7 +101,7 @@ chibios/os/kernel/include/chdebug.h:
 
 chibios/os/hal/include/hal.h:
 
-board.h:
+chibios/board/board.h:
 
 halconf.h:
 

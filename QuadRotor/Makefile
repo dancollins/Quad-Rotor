@@ -63,7 +63,8 @@ include $(CHIBIOS)/os/ports/GCC/ARMCMx/STM32/port.mk
 include $(CHIBIOS)/os/kernel/kernel.mk
 
 # Board
-BOARDSRC = board.c # List of all the board related files.
+BOARDSRC = $(CHIBIOS)/board/board.c # List of all the board related files.
+BOARDINC = $(CHIBIOS)/board
 
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.

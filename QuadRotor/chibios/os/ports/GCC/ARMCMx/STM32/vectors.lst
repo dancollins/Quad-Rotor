@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccsLnaKh.s 			page 1
+ARM GAS  /tmp/ccQX1Cbd.s 			page 1
 
 
    1              		.syntax unified
@@ -20,8 +20,8 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
   17              	.Ldebug_info0:
   18              		.section	.debug_line,"",%progbits
   19              	.Ldebug_line0:
-  20 0000 57000000 		.text
-  20      02004000 
+  20 0000 59000000 		.text
+  20      02004200 
   20      00000201 
   20      FB0E0D00 
   20      01010101 
@@ -36,14 +36,14 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
   29              		.type	_unhandled_exception, %function
   30              	_unhandled_exception:
   31              	.LFB7:
-  32              		.file 1 "../../os/ports/GCC/ARMCMx/STM32/vectors.c"
+  32              		.file 1 "chibios/os/ports/GCC/ARMCMx/STM32/vectors.c"
   33              		.loc 1 187 0
   34              		.cfi_startproc
   35              		@ Naked Function: prologue and epilogue provided by programmer.
   36              		@ args = 0, pretend = 0, frame = 0
   37              		@ frame_needed = 0, uses_anonymous_args = 0
   38              		.loc 1 189 0
-  39              	@ 189 "../../os/ports/GCC/ARMCMx/STM32/vectors.c" 1
+  39              	@ 189 "chibios/os/ports/GCC/ARMCMx/STM32/vectors.c" 1
   40              		.weak NMIVector            
   41              	NMIVector:                
   42              		.weak HardFaultVector      
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
   51              	Vector1C:                 
   52              		.weak Vector20             
   53              	Vector20:                 
-ARM GAS  /tmp/ccsLnaKh.s 			page 2
+ARM GAS  /tmp/ccQX1Cbd.s 			page 2
 
 
   54              		.weak Vector24             
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
  108              		.weak Vector90             
  109              	Vector90:                 
  110              		.weak Vector94             
-ARM GAS  /tmp/ccsLnaKh.s 			page 3
+ARM GAS  /tmp/ccQX1Cbd.s 			page 3
 
 
  111              	Vector94:                 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
  163      0080AFF3 
  163      0080
  164              		.align	2
-ARM GAS  /tmp/ccsLnaKh.s 			page 4
+ARM GAS  /tmp/ccQX1Cbd.s 			page 4
 
 
  165              		.type	_vectors, %object
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
  219 00cc 00000000 		.word	VectorCC
  220 00d0 00000000 		.word	VectorD0
  221 00d4 00000000 		.word	VectorD4
-ARM GAS  /tmp/ccsLnaKh.s 			page 5
+ARM GAS  /tmp/ccQX1Cbd.s 			page 5
 
 
  222 00d8 00000000 		.word	VectorD8
@@ -249,15 +249,15 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
  227              		.text
  228              	.Letext0:
  229              		.section	.debug_info
- 230 0000 AC000000 		.4byte	0xac
+ 230 0000 AA000000 		.4byte	0xaa
  231 0004 0200     		.2byte	0x2
  232 0006 00000000 		.4byte	.Ldebug_abbrev0
  233 000a 04       		.byte	0x4
  234 000b 01       		.uleb128 0x1
- 235 000c F7000000 		.4byte	.LASF9
+ 235 000c F6000000 		.4byte	.LASF9
  236 0010 01       		.byte	0x1
- 237 0011 3E000000 		.4byte	.LASF10
- 238 0015 92000000 		.4byte	.LASF11
+ 237 0011 48000000 		.4byte	.LASF10
+ 238 0015 AB000000 		.4byte	.LASF11
  239 0019 00000000 		.4byte	0x0
  240 001d 00000000 		.4byte	0x0
  241 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
@@ -277,11 +277,11 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
  255 003e 03       		.uleb128 0x3
  256 003f 01       		.byte	0x1
  257 0040 08       		.byte	0x8
- 258 0041 CB000000 		.4byte	.LASF2
+ 258 0041 94000000 		.4byte	.LASF2
  259 0045 03       		.uleb128 0x3
  260 0046 02       		.byte	0x2
  261 0047 05       		.byte	0x5
- 262 0048 68000000 		.4byte	.LASF3
+ 262 0048 3E000000 		.4byte	.LASF3
  263 004c 03       		.uleb128 0x3
  264 004d 02       		.byte	0x2
  265 004e 07       		.byte	0x7
@@ -289,7 +289,7 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
  267 0053 03       		.uleb128 0x3
  268 0054 04       		.byte	0x4
  269 0055 05       		.byte	0x5
- 270 0056 D9000000 		.4byte	.LASF5
+ 270 0056 A2000000 		.4byte	.LASF5
  271 005a 03       		.uleb128 0x3
  272 005b 04       		.byte	0x4
  273 005c 07       		.byte	0x7
@@ -297,368 +297,360 @@ ARM GAS  /tmp/ccsLnaKh.s 			page 1
  275 0061 03       		.uleb128 0x3
  276 0062 08       		.byte	0x8
  277 0063 05       		.byte	0x5
- 278 0064 03010000 		.4byte	.LASF7
-ARM GAS  /tmp/ccsLnaKh.s 			page 6
+ 278 0064 02010000 		.4byte	.LASF7
+ARM GAS  /tmp/ccQX1Cbd.s 			page 6
 
 
  279 0068 03       		.uleb128 0x3
  280 0069 08       		.byte	0x8
  281 006a 07       		.byte	0x7
- 282 006b 7B000000 		.4byte	.LASF8
+ 282 006b 7D000000 		.4byte	.LASF8
  283 006f 04       		.uleb128 0x4
- 284 0070 04       		.byte	0x4
- 285 0071 07       		.byte	0x7
- 286 0072 05       		.uleb128 0x5
- 287 0073 01       		.byte	0x1
- 288 0074 E2000000 		.4byte	.LASF12
- 289 0078 01       		.byte	0x1
- 290 0079 BB       		.byte	0xbb
- 291 007a 01       		.byte	0x1
- 292 007b 00000000 		.4byte	.LFB7
- 293 007f 02000000 		.4byte	.LFE7
- 294 0083 01       		.byte	0x1
- 295 0084 5D       		.byte	0x5d
- 296 0085 06       		.uleb128 0x6
- 297 0086 97000000 		.4byte	0x97
- 298 008a 95000000 		.4byte	0x95
- 299 008e 07       		.uleb128 0x7
- 300 008f 6F000000 		.4byte	0x6f
- 301 0093 3A       		.byte	0x3a
- 302 0094 00       		.byte	0x0
+ 284 0070 01       		.byte	0x1
+ 285 0071 E1000000 		.4byte	.LASF12
+ 286 0075 01       		.byte	0x1
+ 287 0076 BB       		.byte	0xbb
+ 288 0077 01       		.byte	0x1
+ 289 0078 00000000 		.4byte	.LFB7
+ 290 007c 02000000 		.4byte	.LFE7
+ 291 0080 02       		.byte	0x2
+ 292 0081 7D       		.byte	0x7d
+ 293 0082 00       		.sleb128 0
+ 294 0083 05       		.uleb128 0x5
+ 295 0084 95000000 		.4byte	0x95
+ 296 0088 93000000 		.4byte	0x93
+ 297 008c 06       		.uleb128 0x6
+ 298 008d 30000000 		.4byte	0x30
+ 299 0091 3A       		.byte	0x3a
+ 300 0092 00       		.byte	0x0
+ 301 0093 07       		.uleb128 0x7
+ 302 0094 01       		.byte	0x1
  303 0095 08       		.uleb128 0x8
- 304 0096 01       		.byte	0x1
- 305 0097 09       		.uleb128 0x9
- 306 0098 04       		.byte	0x4
- 307 0099 95000000 		.4byte	0x95
- 308 009d 0A       		.uleb128 0xa
- 309 009e 72000000 		.4byte	.LASF13
- 310 00a2 01       		.byte	0x1
- 311 00a3 91       		.byte	0x91
- 312 00a4 85000000 		.4byte	0x85
- 313 00a8 01       		.byte	0x1
- 314 00a9 05       		.byte	0x5
- 315 00aa 03       		.byte	0x3
- 316 00ab 00000000 		.4byte	_vectors
- 317 00af 00       		.byte	0x0
- 318              		.section	.debug_abbrev
- 319 0000 01       		.uleb128 0x1
- 320 0001 11       		.uleb128 0x11
- 321 0002 01       		.byte	0x1
- 322 0003 25       		.uleb128 0x25
- 323 0004 0E       		.uleb128 0xe
- 324 0005 13       		.uleb128 0x13
- 325 0006 0B       		.uleb128 0xb
- 326 0007 03       		.uleb128 0x3
- 327 0008 0E       		.uleb128 0xe
- 328 0009 1B       		.uleb128 0x1b
- 329 000a 0E       		.uleb128 0xe
- 330 000b 11       		.uleb128 0x11
- 331 000c 01       		.uleb128 0x1
- 332 000d 52       		.uleb128 0x52
- 333 000e 01       		.uleb128 0x1
- 334 000f 55       		.uleb128 0x55
- 335 0010 06       		.uleb128 0x6
-ARM GAS  /tmp/ccsLnaKh.s 			page 7
+ 304 0096 04       		.byte	0x4
+ 305 0097 93000000 		.4byte	0x93
+ 306 009b 09       		.uleb128 0x9
+ 307 009c 74000000 		.4byte	.LASF13
+ 308 00a0 01       		.byte	0x1
+ 309 00a1 91       		.byte	0x91
+ 310 00a2 83000000 		.4byte	0x83
+ 311 00a6 01       		.byte	0x1
+ 312 00a7 05       		.byte	0x5
+ 313 00a8 03       		.byte	0x3
+ 314 00a9 00000000 		.4byte	_vectors
+ 315 00ad 00       		.byte	0x0
+ 316              		.section	.debug_abbrev
+ 317 0000 01       		.uleb128 0x1
+ 318 0001 11       		.uleb128 0x11
+ 319 0002 01       		.byte	0x1
+ 320 0003 25       		.uleb128 0x25
+ 321 0004 0E       		.uleb128 0xe
+ 322 0005 13       		.uleb128 0x13
+ 323 0006 0B       		.uleb128 0xb
+ 324 0007 03       		.uleb128 0x3
+ 325 0008 0E       		.uleb128 0xe
+ 326 0009 1B       		.uleb128 0x1b
+ 327 000a 0E       		.uleb128 0xe
+ 328 000b 11       		.uleb128 0x11
+ 329 000c 01       		.uleb128 0x1
+ 330 000d 52       		.uleb128 0x52
+ 331 000e 01       		.uleb128 0x1
+ 332 000f 55       		.uleb128 0x55
+ 333 0010 06       		.uleb128 0x6
+ 334 0011 10       		.uleb128 0x10
+ 335 0012 06       		.uleb128 0x6
+ARM GAS  /tmp/ccQX1Cbd.s 			page 7
 
 
- 336 0011 10       		.uleb128 0x10
- 337 0012 06       		.uleb128 0x6
- 338 0013 00       		.byte	0x0
- 339 0014 00       		.byte	0x0
- 340 0015 02       		.uleb128 0x2
- 341 0016 24       		.uleb128 0x24
- 342 0017 00       		.byte	0x0
- 343 0018 0B       		.uleb128 0xb
- 344 0019 0B       		.uleb128 0xb
- 345 001a 3E       		.uleb128 0x3e
- 346 001b 0B       		.uleb128 0xb
- 347 001c 03       		.uleb128 0x3
- 348 001d 08       		.uleb128 0x8
- 349 001e 00       		.byte	0x0
- 350 001f 00       		.byte	0x0
- 351 0020 03       		.uleb128 0x3
- 352 0021 24       		.uleb128 0x24
- 353 0022 00       		.byte	0x0
- 354 0023 0B       		.uleb128 0xb
- 355 0024 0B       		.uleb128 0xb
- 356 0025 3E       		.uleb128 0x3e
- 357 0026 0B       		.uleb128 0xb
- 358 0027 03       		.uleb128 0x3
- 359 0028 0E       		.uleb128 0xe
- 360 0029 00       		.byte	0x0
- 361 002a 00       		.byte	0x0
- 362 002b 04       		.uleb128 0x4
- 363 002c 24       		.uleb128 0x24
- 364 002d 00       		.byte	0x0
- 365 002e 0B       		.uleb128 0xb
- 366 002f 0B       		.uleb128 0xb
- 367 0030 3E       		.uleb128 0x3e
- 368 0031 0B       		.uleb128 0xb
- 369 0032 00       		.byte	0x0
- 370 0033 00       		.byte	0x0
- 371 0034 05       		.uleb128 0x5
- 372 0035 2E       		.uleb128 0x2e
- 373 0036 00       		.byte	0x0
- 374 0037 3F       		.uleb128 0x3f
- 375 0038 0C       		.uleb128 0xc
- 376 0039 03       		.uleb128 0x3
- 377 003a 0E       		.uleb128 0xe
- 378 003b 3A       		.uleb128 0x3a
- 379 003c 0B       		.uleb128 0xb
- 380 003d 3B       		.uleb128 0x3b
- 381 003e 0B       		.uleb128 0xb
- 382 003f 27       		.uleb128 0x27
- 383 0040 0C       		.uleb128 0xc
- 384 0041 11       		.uleb128 0x11
- 385 0042 01       		.uleb128 0x1
- 386 0043 12       		.uleb128 0x12
- 387 0044 01       		.uleb128 0x1
- 388 0045 40       		.uleb128 0x40
- 389 0046 0A       		.uleb128 0xa
- 390 0047 00       		.byte	0x0
- 391 0048 00       		.byte	0x0
- 392 0049 06       		.uleb128 0x6
-ARM GAS  /tmp/ccsLnaKh.s 			page 8
+ 336 0013 00       		.byte	0x0
+ 337 0014 00       		.byte	0x0
+ 338 0015 02       		.uleb128 0x2
+ 339 0016 24       		.uleb128 0x24
+ 340 0017 00       		.byte	0x0
+ 341 0018 0B       		.uleb128 0xb
+ 342 0019 0B       		.uleb128 0xb
+ 343 001a 3E       		.uleb128 0x3e
+ 344 001b 0B       		.uleb128 0xb
+ 345 001c 03       		.uleb128 0x3
+ 346 001d 08       		.uleb128 0x8
+ 347 001e 00       		.byte	0x0
+ 348 001f 00       		.byte	0x0
+ 349 0020 03       		.uleb128 0x3
+ 350 0021 24       		.uleb128 0x24
+ 351 0022 00       		.byte	0x0
+ 352 0023 0B       		.uleb128 0xb
+ 353 0024 0B       		.uleb128 0xb
+ 354 0025 3E       		.uleb128 0x3e
+ 355 0026 0B       		.uleb128 0xb
+ 356 0027 03       		.uleb128 0x3
+ 357 0028 0E       		.uleb128 0xe
+ 358 0029 00       		.byte	0x0
+ 359 002a 00       		.byte	0x0
+ 360 002b 04       		.uleb128 0x4
+ 361 002c 2E       		.uleb128 0x2e
+ 362 002d 00       		.byte	0x0
+ 363 002e 3F       		.uleb128 0x3f
+ 364 002f 0C       		.uleb128 0xc
+ 365 0030 03       		.uleb128 0x3
+ 366 0031 0E       		.uleb128 0xe
+ 367 0032 3A       		.uleb128 0x3a
+ 368 0033 0B       		.uleb128 0xb
+ 369 0034 3B       		.uleb128 0x3b
+ 370 0035 0B       		.uleb128 0xb
+ 371 0036 27       		.uleb128 0x27
+ 372 0037 0C       		.uleb128 0xc
+ 373 0038 11       		.uleb128 0x11
+ 374 0039 01       		.uleb128 0x1
+ 375 003a 12       		.uleb128 0x12
+ 376 003b 01       		.uleb128 0x1
+ 377 003c 40       		.uleb128 0x40
+ 378 003d 0A       		.uleb128 0xa
+ 379 003e 00       		.byte	0x0
+ 380 003f 00       		.byte	0x0
+ 381 0040 05       		.uleb128 0x5
+ 382 0041 01       		.uleb128 0x1
+ 383 0042 01       		.byte	0x1
+ 384 0043 49       		.uleb128 0x49
+ 385 0044 13       		.uleb128 0x13
+ 386 0045 01       		.uleb128 0x1
+ 387 0046 13       		.uleb128 0x13
+ 388 0047 00       		.byte	0x0
+ 389 0048 00       		.byte	0x0
+ 390 0049 06       		.uleb128 0x6
+ 391 004a 21       		.uleb128 0x21
+ 392 004b 00       		.byte	0x0
+ARM GAS  /tmp/ccQX1Cbd.s 			page 8
 
 
- 393 004a 01       		.uleb128 0x1
- 394 004b 01       		.byte	0x1
- 395 004c 49       		.uleb128 0x49
- 396 004d 13       		.uleb128 0x13
- 397 004e 01       		.uleb128 0x1
- 398 004f 13       		.uleb128 0x13
- 399 0050 00       		.byte	0x0
- 400 0051 00       		.byte	0x0
- 401 0052 07       		.uleb128 0x7
- 402 0053 21       		.uleb128 0x21
- 403 0054 00       		.byte	0x0
- 404 0055 49       		.uleb128 0x49
- 405 0056 13       		.uleb128 0x13
- 406 0057 2F       		.uleb128 0x2f
- 407 0058 0B       		.uleb128 0xb
- 408 0059 00       		.byte	0x0
- 409 005a 00       		.byte	0x0
- 410 005b 08       		.uleb128 0x8
- 411 005c 15       		.uleb128 0x15
- 412 005d 00       		.byte	0x0
- 413 005e 27       		.uleb128 0x27
- 414 005f 0C       		.uleb128 0xc
- 415 0060 00       		.byte	0x0
- 416 0061 00       		.byte	0x0
- 417 0062 09       		.uleb128 0x9
- 418 0063 0F       		.uleb128 0xf
- 419 0064 00       		.byte	0x0
- 420 0065 0B       		.uleb128 0xb
- 421 0066 0B       		.uleb128 0xb
- 422 0067 49       		.uleb128 0x49
- 423 0068 13       		.uleb128 0x13
- 424 0069 00       		.byte	0x0
- 425 006a 00       		.byte	0x0
- 426 006b 0A       		.uleb128 0xa
- 427 006c 34       		.uleb128 0x34
- 428 006d 00       		.byte	0x0
- 429 006e 03       		.uleb128 0x3
- 430 006f 0E       		.uleb128 0xe
- 431 0070 3A       		.uleb128 0x3a
- 432 0071 0B       		.uleb128 0xb
- 433 0072 3B       		.uleb128 0x3b
- 434 0073 0B       		.uleb128 0xb
- 435 0074 49       		.uleb128 0x49
- 436 0075 13       		.uleb128 0x13
- 437 0076 3F       		.uleb128 0x3f
- 438 0077 0C       		.uleb128 0xc
- 439 0078 02       		.uleb128 0x2
- 440 0079 0A       		.uleb128 0xa
- 441 007a 00       		.byte	0x0
- 442 007b 00       		.byte	0x0
- 443 007c 00       		.byte	0x0
- 444              		.section	.debug_pubnames,"",%progbits
- 445 0000 34000000 		.4byte	0x34
- 446 0004 0200     		.2byte	0x2
- 447 0006 00000000 		.4byte	.Ldebug_info0
- 448 000a B0000000 		.4byte	0xb0
- 449 000e 72000000 		.4byte	0x72
-ARM GAS  /tmp/ccsLnaKh.s 			page 9
+ 393 004c 49       		.uleb128 0x49
+ 394 004d 13       		.uleb128 0x13
+ 395 004e 2F       		.uleb128 0x2f
+ 396 004f 0B       		.uleb128 0xb
+ 397 0050 00       		.byte	0x0
+ 398 0051 00       		.byte	0x0
+ 399 0052 07       		.uleb128 0x7
+ 400 0053 15       		.uleb128 0x15
+ 401 0054 00       		.byte	0x0
+ 402 0055 27       		.uleb128 0x27
+ 403 0056 0C       		.uleb128 0xc
+ 404 0057 00       		.byte	0x0
+ 405 0058 00       		.byte	0x0
+ 406 0059 08       		.uleb128 0x8
+ 407 005a 0F       		.uleb128 0xf
+ 408 005b 00       		.byte	0x0
+ 409 005c 0B       		.uleb128 0xb
+ 410 005d 0B       		.uleb128 0xb
+ 411 005e 49       		.uleb128 0x49
+ 412 005f 13       		.uleb128 0x13
+ 413 0060 00       		.byte	0x0
+ 414 0061 00       		.byte	0x0
+ 415 0062 09       		.uleb128 0x9
+ 416 0063 34       		.uleb128 0x34
+ 417 0064 00       		.byte	0x0
+ 418 0065 03       		.uleb128 0x3
+ 419 0066 0E       		.uleb128 0xe
+ 420 0067 3A       		.uleb128 0x3a
+ 421 0068 0B       		.uleb128 0xb
+ 422 0069 3B       		.uleb128 0x3b
+ 423 006a 0B       		.uleb128 0xb
+ 424 006b 49       		.uleb128 0x49
+ 425 006c 13       		.uleb128 0x13
+ 426 006d 3F       		.uleb128 0x3f
+ 427 006e 0C       		.uleb128 0xc
+ 428 006f 02       		.uleb128 0x2
+ 429 0070 0A       		.uleb128 0xa
+ 430 0071 00       		.byte	0x0
+ 431 0072 00       		.byte	0x0
+ 432 0073 00       		.byte	0x0
+ 433              		.section	.debug_pubnames,"",%progbits
+ 434 0000 34000000 		.4byte	0x34
+ 435 0004 0200     		.2byte	0x2
+ 436 0006 00000000 		.4byte	.Ldebug_info0
+ 437 000a AE000000 		.4byte	0xae
+ 438 000e 6F000000 		.4byte	0x6f
+ 439 0012 5F756E68 		.ascii	"_unhandled_exception\000"
+ 439      616E646C 
+ 439      65645F65 
+ 439      78636570 
+ 439      74696F6E 
+ 440 0027 9B000000 		.4byte	0x9b
+ 441 002b 5F766563 		.ascii	"_vectors\000"
+ 441      746F7273 
+ 441      00
+ 442 0034 00000000 		.4byte	0x0
+ 443              		.section	.debug_pubtypes,"",%progbits
+ARM GAS  /tmp/ccQX1Cbd.s 			page 9
 
 
- 450 0012 5F756E68 		.ascii	"_unhandled_exception\000"
- 450      616E646C 
- 450      65645F65 
- 450      78636570 
- 450      74696F6E 
- 451 0027 9D000000 		.4byte	0x9d
- 452 002b 5F766563 		.ascii	"_vectors\000"
- 452      746F7273 
- 452      00
- 453 0034 00000000 		.4byte	0x0
- 454              		.section	.debug_aranges,"",%progbits
- 455 0000 1C000000 		.4byte	0x1c
- 456 0004 0200     		.2byte	0x2
- 457 0006 00000000 		.4byte	.Ldebug_info0
- 458 000a 04       		.byte	0x4
- 459 000b 00       		.byte	0x0
- 460 000c 0000     		.2byte	0x0
- 461 000e 0000     		.2byte	0x0
- 462 0010 00000000 		.4byte	.LFB7
- 463 0014 02000000 		.4byte	.LFE7-.LFB7
- 464 0018 00000000 		.4byte	0x0
- 465 001c 00000000 		.4byte	0x0
- 466              		.section	.debug_ranges,"",%progbits
- 467              	.Ldebug_ranges0:
- 468 0000 00000000 		.4byte	.Ltext0
- 469 0004 00000000 		.4byte	.Letext0
- 470 0008 00000000 		.4byte	.LFB7
- 471 000c 02000000 		.4byte	.LFE7
- 472 0010 00000000 		.4byte	0x0
- 473 0014 00000000 		.4byte	0x0
- 474              		.section	.debug_str,"MS",%progbits,1
- 475              	.LASF0:
- 476 0000 756E7369 		.ascii	"unsigned int\000"
- 476      676E6564 
- 476      20696E74 
- 476      00
- 477              	.LASF6:
- 478 000d 6C6F6E67 		.ascii	"long unsigned int\000"
- 478      20756E73 
- 478      69676E65 
- 478      6420696E 
- 478      7400
- 479              	.LASF1:
- 480 001f 7369676E 		.ascii	"signed char\000"
- 480      65642063 
- 480      68617200 
- 481              	.LASF4:
- 482 002b 73686F72 		.ascii	"short unsigned int\000"
- 482      7420756E 
- 482      7369676E 
- 482      65642069 
- 482      6E7400
- 483              	.LASF10:
- 484 003e 2E2E2F2E 		.ascii	"../../os/ports/GCC/ARMCMx/STM32/vectors.c\000"
- 484      2E2F6F73 
- 484      2F706F72 
- 484      74732F47 
-ARM GAS  /tmp/ccsLnaKh.s 			page 10
+ 444 0000 0E000000 		.4byte	0xe
+ 445 0004 0200     		.2byte	0x2
+ 446 0006 00000000 		.4byte	.Ldebug_info0
+ 447 000a AE000000 		.4byte	0xae
+ 448 000e 00000000 		.4byte	0x0
+ 449              		.section	.debug_aranges,"",%progbits
+ 450 0000 1C000000 		.4byte	0x1c
+ 451 0004 0200     		.2byte	0x2
+ 452 0006 00000000 		.4byte	.Ldebug_info0
+ 453 000a 04       		.byte	0x4
+ 454 000b 00       		.byte	0x0
+ 455 000c 0000     		.2byte	0x0
+ 456 000e 0000     		.2byte	0x0
+ 457 0010 00000000 		.4byte	.LFB7
+ 458 0014 02000000 		.4byte	.LFE7-.LFB7
+ 459 0018 00000000 		.4byte	0x0
+ 460 001c 00000000 		.4byte	0x0
+ 461              		.section	.debug_ranges,"",%progbits
+ 462              	.Ldebug_ranges0:
+ 463 0000 00000000 		.4byte	.LFB7
+ 464 0004 02000000 		.4byte	.LFE7
+ 465 0008 00000000 		.4byte	0x0
+ 466 000c 00000000 		.4byte	0x0
+ 467              		.section	.debug_str,"MS",%progbits,1
+ 468              	.LASF0:
+ 469 0000 756E7369 		.ascii	"unsigned int\000"
+ 469      676E6564 
+ 469      20696E74 
+ 469      00
+ 470              	.LASF6:
+ 471 000d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 471      20756E73 
+ 471      69676E65 
+ 471      6420696E 
+ 471      7400
+ 472              	.LASF1:
+ 473 001f 7369676E 		.ascii	"signed char\000"
+ 473      65642063 
+ 473      68617200 
+ 474              	.LASF4:
+ 475 002b 73686F72 		.ascii	"short unsigned int\000"
+ 475      7420756E 
+ 475      7369676E 
+ 475      65642069 
+ 475      6E7400
+ 476              	.LASF3:
+ 477 003e 73686F72 		.ascii	"short int\000"
+ 477      7420696E 
+ 477      7400
+ 478              	.LASF10:
+ 479 0048 63686962 		.ascii	"chibios/os/ports/GCC/ARMCMx/STM32/vectors.c\000"
+ 479      696F732F 
+ 479      6F732F70 
+ 479      6F727473 
+ 479      2F474343 
+ 480              	.LASF13:
+ 481 0074 5F766563 		.ascii	"_vectors\000"
+ARM GAS  /tmp/ccQX1Cbd.s 			page 10
 
 
- 484      43432F41 
- 485              	.LASF3:
- 486 0068 73686F72 		.ascii	"short int\000"
- 486      7420696E 
- 486      7400
- 487              	.LASF13:
- 488 0072 5F766563 		.ascii	"_vectors\000"
- 488      746F7273 
- 488      00
- 489              	.LASF8:
- 490 007b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 490      206C6F6E 
- 490      6720756E 
- 490      7369676E 
- 490      65642069 
- 491              	.LASF11:
- 492 0092 2F686F6D 		.ascii	"/home/dan/Downloads/ChibiOS_2.2.3/demos/ARMCM3-STM3"
- 492      652F6461 
- 492      6E2F446F 
- 492      776E6C6F 
- 492      6164732F 
- 493 00c5 32463130 		.ascii	"2F103\000"
- 493      3300
- 494              	.LASF2:
- 495 00cb 756E7369 		.ascii	"unsigned char\000"
- 495      676E6564 
- 495      20636861 
- 495      7200
- 496              	.LASF5:
- 497 00d9 6C6F6E67 		.ascii	"long int\000"
- 497      20696E74 
- 497      00
- 498              	.LASF12:
- 499 00e2 5F756E68 		.ascii	"_unhandled_exception\000"
- 499      616E646C 
- 499      65645F65 
- 499      78636570 
- 499      74696F6E 
- 500              	.LASF9:
- 501 00f7 474E5520 		.ascii	"GNU C 4.4.1\000"
- 501      4320342E 
- 501      342E3100 
- 502              	.LASF7:
- 503 0103 6C6F6E67 		.ascii	"long long int\000"
- 503      206C6F6E 
- 503      6720696E 
- 503      7400
- 504              		.ident	"GCC: (Red Suite 2010Q1 by Code Red) 4.4.1"
-ARM GAS  /tmp/ccsLnaKh.s 			page 11
+ 481      746F7273 
+ 481      00
+ 482              	.LASF8:
+ 483 007d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 483      206C6F6E 
+ 483      6720756E 
+ 483      7369676E 
+ 483      65642069 
+ 484              	.LASF2:
+ 485 0094 756E7369 		.ascii	"unsigned char\000"
+ 485      676E6564 
+ 485      20636861 
+ 485      7200
+ 486              	.LASF5:
+ 487 00a2 6C6F6E67 		.ascii	"long int\000"
+ 487      20696E74 
+ 487      00
+ 488              	.LASF11:
+ 489 00ab 2F686F6D 		.ascii	"/home/dan/github/github-projects/Quad-Rotor/QuadRot"
+ 489      652F6461 
+ 489      6E2F6769 
+ 489      74687562 
+ 489      2F676974 
+ 490 00de 6F7200   		.ascii	"or\000"
+ 491              	.LASF12:
+ 492 00e1 5F756E68 		.ascii	"_unhandled_exception\000"
+ 492      616E646C 
+ 492      65645F65 
+ 492      78636570 
+ 492      74696F6E 
+ 493              	.LASF9:
+ 494 00f6 474E5520 		.ascii	"GNU C 4.5.1\000"
+ 494      4320342E 
+ 494      352E3100 
+ 495              	.LASF7:
+ 496 0102 6C6F6E67 		.ascii	"long long int\000"
+ 496      206C6F6E 
+ 496      6720696E 
+ 496      7400
+ 497              		.ident	"GCC: (GNU) 4.5.1"
+ARM GAS  /tmp/ccQX1Cbd.s 			page 11
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 vectors.c
-     /tmp/ccsLnaKh.s:24     .text._unhandled_exception:00000000 $t
-     /tmp/ccsLnaKh.s:30     .text._unhandled_exception:00000000 _unhandled_exception
-     /tmp/ccsLnaKh.s:41     .text._unhandled_exception:00000000 NMIVector
-     /tmp/ccsLnaKh.s:43     .text._unhandled_exception:00000000 HardFaultVector
-     /tmp/ccsLnaKh.s:45     .text._unhandled_exception:00000000 MemManageVector
-     /tmp/ccsLnaKh.s:47     .text._unhandled_exception:00000000 BusFaultVector
-     /tmp/ccsLnaKh.s:49     .text._unhandled_exception:00000000 UsageFaultVector
-     /tmp/ccsLnaKh.s:51     .text._unhandled_exception:00000000 Vector1C
-     /tmp/ccsLnaKh.s:53     .text._unhandled_exception:00000000 Vector20
-     /tmp/ccsLnaKh.s:55     .text._unhandled_exception:00000000 Vector24
-     /tmp/ccsLnaKh.s:57     .text._unhandled_exception:00000000 Vector28
-     /tmp/ccsLnaKh.s:59     .text._unhandled_exception:00000000 SVCallVector
-     /tmp/ccsLnaKh.s:61     .text._unhandled_exception:00000000 DebugMonitorVector
-     /tmp/ccsLnaKh.s:63     .text._unhandled_exception:00000000 Vector34
-     /tmp/ccsLnaKh.s:65     .text._unhandled_exception:00000000 PendSVVector
-     /tmp/ccsLnaKh.s:67     .text._unhandled_exception:00000000 SysTickVector
-     /tmp/ccsLnaKh.s:69     .text._unhandled_exception:00000000 Vector40
-     /tmp/ccsLnaKh.s:71     .text._unhandled_exception:00000000 Vector44
-     /tmp/ccsLnaKh.s:73     .text._unhandled_exception:00000000 Vector48
-     /tmp/ccsLnaKh.s:75     .text._unhandled_exception:00000000 Vector4C
-     /tmp/ccsLnaKh.s:77     .text._unhandled_exception:00000000 Vector50
-     /tmp/ccsLnaKh.s:79     .text._unhandled_exception:00000000 Vector54
-     /tmp/ccsLnaKh.s:81     .text._unhandled_exception:00000000 Vector58
-     /tmp/ccsLnaKh.s:83     .text._unhandled_exception:00000000 Vector5C
-     /tmp/ccsLnaKh.s:85     .text._unhandled_exception:00000000 Vector60
-     /tmp/ccsLnaKh.s:87     .text._unhandled_exception:00000000 Vector64
-     /tmp/ccsLnaKh.s:89     .text._unhandled_exception:00000000 Vector68
-     /tmp/ccsLnaKh.s:91     .text._unhandled_exception:00000000 Vector6C
-     /tmp/ccsLnaKh.s:93     .text._unhandled_exception:00000000 Vector70
-     /tmp/ccsLnaKh.s:95     .text._unhandled_exception:00000000 Vector74
-     /tmp/ccsLnaKh.s:97     .text._unhandled_exception:00000000 Vector78
-     /tmp/ccsLnaKh.s:99     .text._unhandled_exception:00000000 Vector7C
-     /tmp/ccsLnaKh.s:101    .text._unhandled_exception:00000000 Vector80
-     /tmp/ccsLnaKh.s:103    .text._unhandled_exception:00000000 Vector84
-     /tmp/ccsLnaKh.s:105    .text._unhandled_exception:00000000 Vector88
-     /tmp/ccsLnaKh.s:107    .text._unhandled_exception:00000000 Vector8C
-     /tmp/ccsLnaKh.s:109    .text._unhandled_exception:00000000 Vector90
-     /tmp/ccsLnaKh.s:111    .text._unhandled_exception:00000000 Vector94
-     /tmp/ccsLnaKh.s:113    .text._unhandled_exception:00000000 Vector98
-     /tmp/ccsLnaKh.s:115    .text._unhandled_exception:00000000 Vector9C
-     /tmp/ccsLnaKh.s:117    .text._unhandled_exception:00000000 VectorA0
-     /tmp/ccsLnaKh.s:119    .text._unhandled_exception:00000000 VectorA4
-     /tmp/ccsLnaKh.s:121    .text._unhandled_exception:00000000 VectorA8
-     /tmp/ccsLnaKh.s:123    .text._unhandled_exception:00000000 VectorAC
-     /tmp/ccsLnaKh.s:125    .text._unhandled_exception:00000000 VectorB0
-     /tmp/ccsLnaKh.s:127    .text._unhandled_exception:00000000 VectorB4
-     /tmp/ccsLnaKh.s:129    .text._unhandled_exception:00000000 VectorB8
-     /tmp/ccsLnaKh.s:131    .text._unhandled_exception:00000000 VectorBC
-     /tmp/ccsLnaKh.s:133    .text._unhandled_exception:00000000 VectorC0
-     /tmp/ccsLnaKh.s:135    .text._unhandled_exception:00000000 VectorC4
-     /tmp/ccsLnaKh.s:137    .text._unhandled_exception:00000000 VectorC8
-     /tmp/ccsLnaKh.s:139    .text._unhandled_exception:00000000 VectorCC
-     /tmp/ccsLnaKh.s:141    .text._unhandled_exception:00000000 VectorD0
-     /tmp/ccsLnaKh.s:143    .text._unhandled_exception:00000000 VectorD4
-     /tmp/ccsLnaKh.s:145    .text._unhandled_exception:00000000 VectorD8
-ARM GAS  /tmp/ccsLnaKh.s 			page 12
+                            *ABS*:0000000000000000 vectors.c
+     /tmp/ccQX1Cbd.s:24     .text._unhandled_exception:0000000000000000 $t
+     /tmp/ccQX1Cbd.s:30     .text._unhandled_exception:0000000000000000 _unhandled_exception
+     /tmp/ccQX1Cbd.s:41     .text._unhandled_exception:0000000000000000 NMIVector
+     /tmp/ccQX1Cbd.s:43     .text._unhandled_exception:0000000000000000 HardFaultVector
+     /tmp/ccQX1Cbd.s:45     .text._unhandled_exception:0000000000000000 MemManageVector
+     /tmp/ccQX1Cbd.s:47     .text._unhandled_exception:0000000000000000 BusFaultVector
+     /tmp/ccQX1Cbd.s:49     .text._unhandled_exception:0000000000000000 UsageFaultVector
+     /tmp/ccQX1Cbd.s:51     .text._unhandled_exception:0000000000000000 Vector1C
+     /tmp/ccQX1Cbd.s:53     .text._unhandled_exception:0000000000000000 Vector20
+     /tmp/ccQX1Cbd.s:55     .text._unhandled_exception:0000000000000000 Vector24
+     /tmp/ccQX1Cbd.s:57     .text._unhandled_exception:0000000000000000 Vector28
+     /tmp/ccQX1Cbd.s:59     .text._unhandled_exception:0000000000000000 SVCallVector
+     /tmp/ccQX1Cbd.s:61     .text._unhandled_exception:0000000000000000 DebugMonitorVector
+     /tmp/ccQX1Cbd.s:63     .text._unhandled_exception:0000000000000000 Vector34
+     /tmp/ccQX1Cbd.s:65     .text._unhandled_exception:0000000000000000 PendSVVector
+     /tmp/ccQX1Cbd.s:67     .text._unhandled_exception:0000000000000000 SysTickVector
+     /tmp/ccQX1Cbd.s:69     .text._unhandled_exception:0000000000000000 Vector40
+     /tmp/ccQX1Cbd.s:71     .text._unhandled_exception:0000000000000000 Vector44
+     /tmp/ccQX1Cbd.s:73     .text._unhandled_exception:0000000000000000 Vector48
+     /tmp/ccQX1Cbd.s:75     .text._unhandled_exception:0000000000000000 Vector4C
+     /tmp/ccQX1Cbd.s:77     .text._unhandled_exception:0000000000000000 Vector50
+     /tmp/ccQX1Cbd.s:79     .text._unhandled_exception:0000000000000000 Vector54
+     /tmp/ccQX1Cbd.s:81     .text._unhandled_exception:0000000000000000 Vector58
+     /tmp/ccQX1Cbd.s:83     .text._unhandled_exception:0000000000000000 Vector5C
+     /tmp/ccQX1Cbd.s:85     .text._unhandled_exception:0000000000000000 Vector60
+     /tmp/ccQX1Cbd.s:87     .text._unhandled_exception:0000000000000000 Vector64
+     /tmp/ccQX1Cbd.s:89     .text._unhandled_exception:0000000000000000 Vector68
+     /tmp/ccQX1Cbd.s:91     .text._unhandled_exception:0000000000000000 Vector6C
+     /tmp/ccQX1Cbd.s:93     .text._unhandled_exception:0000000000000000 Vector70
+     /tmp/ccQX1Cbd.s:95     .text._unhandled_exception:0000000000000000 Vector74
+     /tmp/ccQX1Cbd.s:97     .text._unhandled_exception:0000000000000000 Vector78
+     /tmp/ccQX1Cbd.s:99     .text._unhandled_exception:0000000000000000 Vector7C
+     /tmp/ccQX1Cbd.s:101    .text._unhandled_exception:0000000000000000 Vector80
+     /tmp/ccQX1Cbd.s:103    .text._unhandled_exception:0000000000000000 Vector84
+     /tmp/ccQX1Cbd.s:105    .text._unhandled_exception:0000000000000000 Vector88
+     /tmp/ccQX1Cbd.s:107    .text._unhandled_exception:0000000000000000 Vector8C
+     /tmp/ccQX1Cbd.s:109    .text._unhandled_exception:0000000000000000 Vector90
+     /tmp/ccQX1Cbd.s:111    .text._unhandled_exception:0000000000000000 Vector94
+     /tmp/ccQX1Cbd.s:113    .text._unhandled_exception:0000000000000000 Vector98
+     /tmp/ccQX1Cbd.s:115    .text._unhandled_exception:0000000000000000 Vector9C
+     /tmp/ccQX1Cbd.s:117    .text._unhandled_exception:0000000000000000 VectorA0
+     /tmp/ccQX1Cbd.s:119    .text._unhandled_exception:0000000000000000 VectorA4
+     /tmp/ccQX1Cbd.s:121    .text._unhandled_exception:0000000000000000 VectorA8
+     /tmp/ccQX1Cbd.s:123    .text._unhandled_exception:0000000000000000 VectorAC
+     /tmp/ccQX1Cbd.s:125    .text._unhandled_exception:0000000000000000 VectorB0
+     /tmp/ccQX1Cbd.s:127    .text._unhandled_exception:0000000000000000 VectorB4
+     /tmp/ccQX1Cbd.s:129    .text._unhandled_exception:0000000000000000 VectorB8
+     /tmp/ccQX1Cbd.s:131    .text._unhandled_exception:0000000000000000 VectorBC
+     /tmp/ccQX1Cbd.s:133    .text._unhandled_exception:0000000000000000 VectorC0
+     /tmp/ccQX1Cbd.s:135    .text._unhandled_exception:0000000000000000 VectorC4
+     /tmp/ccQX1Cbd.s:137    .text._unhandled_exception:0000000000000000 VectorC8
+     /tmp/ccQX1Cbd.s:139    .text._unhandled_exception:0000000000000000 VectorCC
+     /tmp/ccQX1Cbd.s:141    .text._unhandled_exception:0000000000000000 VectorD0
+     /tmp/ccQX1Cbd.s:143    .text._unhandled_exception:0000000000000000 VectorD4
+     /tmp/ccQX1Cbd.s:145    .text._unhandled_exception:0000000000000000 VectorD8
+ARM GAS  /tmp/ccQX1Cbd.s 			page 12
 
 
-     /tmp/ccsLnaKh.s:147    .text._unhandled_exception:00000000 VectorDC
-     /tmp/ccsLnaKh.s:149    .text._unhandled_exception:00000000 VectorE0
-     /tmp/ccsLnaKh.s:151    .text._unhandled_exception:00000000 VectorE4
-     /tmp/ccsLnaKh.s:153    .text._unhandled_exception:00000000 VectorE8
-     /tmp/ccsLnaKh.s:167    vectors:00000000 _vectors
-     /tmp/ccsLnaKh.s:164    vectors:00000000 $d
-                     .debug_frame:00000010 $d
+     /tmp/ccQX1Cbd.s:147    .text._unhandled_exception:0000000000000000 VectorDC
+     /tmp/ccQX1Cbd.s:149    .text._unhandled_exception:0000000000000000 VectorE0
+     /tmp/ccQX1Cbd.s:151    .text._unhandled_exception:0000000000000000 VectorE4
+     /tmp/ccQX1Cbd.s:153    .text._unhandled_exception:0000000000000000 VectorE8
+     /tmp/ccQX1Cbd.s:167    vectors:0000000000000000 _vectors
+     /tmp/ccQX1Cbd.s:164    vectors:0000000000000000 $d
+                     .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
 __ram_end__
