@@ -49,8 +49,13 @@
 /*
  * IO pins assignments.
  */
-#define GPIOB_LED1		8 // D2 on Silk Screen
-#define GPIOB_LED2		9 // D1 on Silk Screen
+#define GPIOA_MOTOR1		0 // ESC 1
+#define GPIOA_MOTOR2		1 // ESC 1
+#define GPIOA_MOTOR3		2 // ESC 1
+#define GPIOA_MOTOR4		3 // ESC 1
+ 
+#define GPIOB_LED1			8 // D2 on Silk Screen
+#define GPIOB_LED2			9 // D1 on Silk Screen
 
 #define GPIOC_BUTTON1		1 // S3 on Silk Screen
 #define GPIOC_BUTTON2		0 // S2 on Silk Screen
@@ -83,10 +88,11 @@
 /*
  * Port A setup.
  * Everything input with pull-up except:
+ * PA0-PA3 - Alternate Output (MOTORn)
  * PA9	- Alternate output  (USART1 TX).
  * PA10	- Normal input      (USART1 RX).
  */
-#define VAL_GPIOACRL            0x88888B88      /*  PA7...PA0 */
+#define VAL_GPIOACRL            0x8888BBBB      /*  PA7...PA0 */
 #define VAL_GPIOACRH            0x888884B8      /* PA15...PA8 */
 #define VAL_GPIOAODR            0xFFFFFFFF
 

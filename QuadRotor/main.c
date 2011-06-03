@@ -36,7 +36,8 @@
 #include "ch.h"
 #include "hal.h"
 
-#include "motor.h"
+#include "motor.h" // Motor Driver
+#include "serial.h" // Serial Driver
 
 /*
 	Blinky LED Thread
@@ -55,23 +56,13 @@ static msg_t Blinky(void *arg) { // Blinky LED thread
 	}
 }
 
-/*
- * Serial Output
- */
-void serial_print(BaseChannel *chp, const char *msg) {
-  while (*msg)
-    chIOPut(chp, *msg++);
-}
-
-void serial_println(BaseChannel *chp, const char *msg) {
-	serial_print(chp, msg);
-	chIOPut(chp, '\n');
-}
+BaseChannel *chp; // Console Channel
 
 /*
 	Application entry point.
 */
 int main(void) {
+	uint16_t thrust = 1000;
 	/*
 	* System initializations.
 	* - HAL initialization, this also initializes the configured device drivers
@@ -82,14 +73,31 @@ int main(void) {
 	halInit();
 	chSysInit();
 	
+	// Start Serial Console
 	sdStart(&SD1, NULL);
-
+	chp = &SD1; // Use SerialDriver1 as serial output
+	serial_println("Serial Active");
+	
+	// Start Motors
+	motor_init();
+	serial_println("Motors Active");
+	
+	// Create Threads
 	chThdCreateStatic(waBlinky, sizeof(waBlinky), NORMALPRIO, Blinky, NULL); // Create blinky LED thread
 
 	// This is where the main thread actually starts...
 	while (1) {
-		serial_println((BaseChannel *)&SD1, "Hello, World!");
-		chThdSleepMilliseconds(500); // Waste time!  The 'main' thread in this case is the blinky LED
+		serial_print("Thrust = ");
+		serial_printn(thrust);
+		serial_println("");
+		if (thrust < 2000) {
+			thrust+=10;
+			motor_set(thrust);
+		} else {
+			thrust = 1000;
+			motor_set(thrust);
+		}
+		chThdSleepMilliseconds(500);
 	}
 	return(0);
 }
