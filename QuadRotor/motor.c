@@ -17,28 +17,28 @@ static PWMConfig pwmcfg = {
 		{PWM_OUTPUT_ACTIVE_HIGH, NULL},
 		{PWM_OUTPUT_ACTIVE_HIGH, NULL}
 	},
-	SYS,
-	PWM_COMPUTE_ARR(10000, 1000000),
+	PWM_COMPUTE_PSC(STM32_TIMCLK1, 1000000), // System Clock(Hz), PWM Clock(Hz)
+	PWM_COMPUTE_ARR(1000000, 20000000), // PWM Clock(Hz), Duty Cycle(nS)
 	0
 };
 
-uint16_t motors[4];
+uint16_t motors[4] = {500, 500, 500, 500};
 
 void motor_init(void) {
 	pwmStart(&PWMD2, &pwmcfg);
 	
-	pwmEnableChannel(&PWMD2, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 5000));
-	pwmEnableChannel(&PWMD2, 1, 1000);
-	pwmEnableChannel(&PWMD2, 2, 1000);
-	pwmEnableChannel(&PWMD2, 3, 1000);
+	pwmEnableChannel(&PWMD2, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 500)); // 1mS Pulse
+	pwmEnableChannel(&PWMD2, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 500)); // 1mS Pulse
+	pwmEnableChannel(&PWMD2, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 500)); // 1mS Pulse
+	pwmEnableChannel(&PWMD2, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 500)); // 1mS Pulse
 }
 
 void motor_refresh(PWMDriver *pwmp) {
 	(void)pwmp;
-	pwmEnableChannel(&PWMD2, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 5000));
-	pwmEnableChannel(&PWMD2, 1, 1000 + motors[1]);
-	pwmEnableChannel(&PWMD2, 2, 1000 + motors[2]);
-	pwmEnableChannel(&PWMD2, 3, 1000 + motors[3]);
+	pwmEnableChannel(&PWMD2, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[0]));
+	pwmEnableChannel(&PWMD2, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[1]));
+	pwmEnableChannel(&PWMD2, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[2]));
+	pwmEnableChannel(&PWMD2, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[3]));
 }
 
 void motor_set(uint16_t thrust) {

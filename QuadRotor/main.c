@@ -87,17 +87,24 @@ int main(void) {
 
 	// This is where the main thread actually starts...
 	while (1) {
-		serial_print("Thrust = ");
-		serial_printn(thrust);
-		serial_println("");
-		if (thrust < 2000) {
-			thrust=1500;
-			motor_set(thrust);
-		} else {
-			thrust = 1000;
-			motor_set(thrust);
+		while (!palReadPad(IOPORT3, GPIOC_BUTTON2)) {
+			for (thrust=500; thrust<1000; thrust+=10) {
+				motor_set(thrust);
+				serial_print("Thrust = ");
+				serial_printn(thrust);
+				serial_println("");
+				chThdSleepMilliseconds(50);
+			}
+			chThdSleepMilliseconds(1000);
+			for (thrust=1000; thrust>500; thrust-=10) {
+				motor_set(thrust);
+				serial_print("Thrust = ");
+				serial_printn(thrust);
+				serial_println("");
+				chThdSleepMilliseconds(50);
+			}
+			chThdSleepMilliseconds(2000);
 		}
-		chThdSleepMilliseconds(500);
 	}
 	return(0);
 }
