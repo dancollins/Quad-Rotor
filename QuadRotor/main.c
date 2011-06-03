@@ -50,9 +50,9 @@ static msg_t Blinky(void *arg) { // Blinky LED thread
 	
 	while (1) {
 		palClearPad(IOPORT2, GPIOB_LED1); // Turn LED on
-		chThdSleepMilliseconds(500); // Wait 500ms
+		chThdSleepMilliseconds(50);
 		palSetPad(IOPORT2, GPIOB_LED1); // Turn LED off
-		chThdSleepMilliseconds(500); // Wait 500ms
+		chThdSleepMilliseconds(950);
 	}
 }
 
@@ -91,7 +91,7 @@ int main(void) {
 		serial_printn(thrust);
 		serial_println("");
 		if (thrust < 2000) {
-			thrust+=10;
+			thrust=1500;
 			motor_set(thrust);
 		} else {
 			thrust = 1000;
