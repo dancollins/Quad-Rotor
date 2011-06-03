@@ -30,6 +30,5 @@ To Do List
 	* Accelerometer
 	* GPS
 	* Motor Speed
-* Brushless Motor Control
 
 Copyright [Dan Collins](http://dancollins.github.com/) 2011.  Released under the POPL licence (see LICENCE.TXT)
