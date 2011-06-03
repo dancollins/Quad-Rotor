@@ -26,6 +26,6 @@ structure, but if not send me an email to tell me a better way!
 	* GPS
 	* Motor Speed
 
-
+----------
 
 Copyright [Dan Collins](http://dancollins.github.com/) 2011.  Released under the POPL licence (see LICENCE.TXT)
