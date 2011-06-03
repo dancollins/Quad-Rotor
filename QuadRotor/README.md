@@ -18,5 +18,18 @@ This directory holds the source used to get my quad rotor off the ground.  It is
 Any files used to make this work, such as EAGLE design files, will also be included within.  I hope I can come up with an easy to follow directory
 structure, but if not send me an email to tell me a better way!
 
+To Do List
+----------
+* Radio Communication
+	* Debugging Information
+	* Current 'Job'
+	* Heading
+	* Attitude and Altitude
+* Sensor Interface
+	* Gyroscope
+	* Accelerometer
+	* GPS
+	* Motor Speed
+* Brushless Motor Control
 
 Copyright [Dan Collins](http://dancollins.github.com/) 2011.  Released under the POPL licence (see LICENCE.TXT)

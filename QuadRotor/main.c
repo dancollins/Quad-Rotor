@@ -17,9 +17,9 @@
 		
 	Processes the information in order to
 	Run the outputs:
-		- BLDC motor via ESC
+		+ BLDC motor via ESC
 		* Transceiver over serial
-			* Debugging information
+			+ Debugging information
 			- Current 'job'
 			- Heading
 			- Altitude
