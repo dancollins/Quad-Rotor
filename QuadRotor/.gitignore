@@ -14,5 +14,5 @@
 ###################################
 *.lst
 *.map
-/dep
+/.dep
 git-ignore-these.sh
