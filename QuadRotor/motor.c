@@ -43,4 +43,7 @@ void motor_refresh(PWMDriver *pwmp) {
 
 void motor_set(uint16_t thrust) {
 	motors[0] = thrust;
+	motors[1] = thrust;
+	motors[2] = thrust;
+	motors[3] = thrust;
 }
