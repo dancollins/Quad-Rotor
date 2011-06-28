@@ -36,8 +36,9 @@
 #include "ch.h"
 #include "hal.h"
 
-#include "motor.h" // Motor Driver
-#include "serial.h" // Serial Driver
+#include "motor.h" // Motor driver
+#include "debug.h" // Debug serial driver
+#include "radio.h" // Handles radio communication
 
 /*
 	Blinky LED Thread
@@ -56,7 +57,11 @@ static msg_t Blinky(void *arg) { // Blinky LED thread
 	}
 }
 
-BaseChannel *chp; // Console Channel
+/*
+	BaseChannels
+*/
+BaseChannel *console; // Console Channel
+BaseChannel *radio; // Radio Channel
 
 /*
 	Application entry point.
@@ -75,8 +80,13 @@ int main(void) {
 	
 	// Start Serial Console
 	sdStart(&SD1, NULL);
-	chp = &SD1; // Use SerialDriver1 as serial output
+	console = &SD1; // Use SerialDriver1 as console output
 	serial_println("Serial Active");
+	
+	// Start Radio Comms
+	radio_init();
+	radio_println("Radio Active");
+	serial_println("Radio Active");
 	
 	// Start Motors
 	motor_init();

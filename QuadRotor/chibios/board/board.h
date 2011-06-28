@@ -50,9 +50,9 @@
  * IO pins assignments.
  */
 #define GPIOA_MOTOR1		0 // ESC 1
-#define GPIOA_MOTOR2		1 // ESC 1
-#define GPIOA_MOTOR3		2 // ESC 1
-#define GPIOA_MOTOR4		3 // ESC 1
+#define GPIOA_MOTOR2		1 // ESC 2
+#define GPIOA_MOTOR3		2 // ESC 3
+#define GPIOA_MOTOR4		3 // ESC 4
  
 #define GPIOB_LED1			8 // D2 on Silk Screen
 #define GPIOB_LED2			9 // D1 on Silk Screen
@@ -109,9 +109,11 @@
 /*
  * Port C setup.
  * Everything input with pull-up except:
+ * PC10	- Alternate output	(USART3 TX).
+ * PC11 - Normal input		(USART3 RX).
  */
 #define VAL_GPIOCCRL            0x88888888      /*  PC7...PC0 */
-#define VAL_GPIOCCRH            0x88888888      /* PC15...PC8 */
+#define VAL_GPIOCCRH            0x88884B88      /* PC15...PC8 */
 #define VAL_GPIOCODR            0xFFFFFFFF
 
 /*
