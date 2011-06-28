@@ -101,19 +101,19 @@
  * Everything input with pull-up except:
  * PB8 - Push Pull output	(LED1)
  * PB9 - Push Pull output	(LED2)
+ * PB10 - Alternate output	(USART3 TX).
+ * PB11 - Normal input		(USART3 RX).
  */
 #define VAL_GPIOBCRL            0x88888888      /*  PB7...PB0 */
-#define VAL_GPIOBCRH            0x88888833      /* PB15...PB8 */
+#define VAL_GPIOBCRH            0x88884B33      /* PB15...PB8 */
 #define VAL_GPIOBODR            0xFFFFFFFF
 
 /*
  * Port C setup.
  * Everything input with pull-up except:
- * PC10	- Alternate output	(USART3 TX).
- * PC11 - Normal input		(USART3 RX).
  */
 #define VAL_GPIOCCRL            0x88888888      /*  PC7...PC0 */
-#define VAL_GPIOCCRH            0x88884B88      /* PC15...PC8 */
+#define VAL_GPIOCCRH            0x88888888      /* PC15...PC8 */
 #define VAL_GPIOCODR            0xFFFFFFFF
 
 /*

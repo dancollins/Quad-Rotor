@@ -40,6 +40,8 @@
 #include "debug.h" // Debug serial driver
 #include "radio.h" // Handles radio communication
 
+unsigned char radio_buffer[100] = {0};
+
 /*
 	Blinky LED Thread
 */
@@ -54,6 +56,20 @@ static msg_t Blinky(void *arg) { // Blinky LED thread
 		chThdSleepMilliseconds(50);
 		palSetPad(IOPORT2, GPIOB_LED1); // Turn LED off
 		chThdSleepMilliseconds(950);
+	}
+}
+
+/*
+	Radio Thread
+*/
+static WORKING_AREA(waRadio, 128); // Working area for the thread
+
+static msg_t Radio(void *arg) { // Radio thread
+	
+	(void)arg; // Don't need arguments...
+	
+	while (1) {
+		uartStartReceive(&UARTD3, radio_buffer);
 	}
 }
 
@@ -81,16 +97,15 @@ int main(void) {
 	// Start Serial Console
 	sdStart(&SD1, NULL);
 	console = &SD1; // Use SerialDriver1 as console output
-	serial_println("Serial Active");
+	debug_println("Serial Active");
 	
 	// Start Radio Comms
 	radio_init();
-	radio_println("Radio Active");
-	serial_println("Radio Active");
+	debug_println("Radio Active");
 	
 	// Start Motors
 	motor_init();
-	serial_println("Motors Active");
+	debug_println("Motors Active");
 	
 	// Create Threads
 	chThdCreateStatic(waBlinky, sizeof(waBlinky), NORMALPRIO, Blinky, NULL); // Create blinky LED thread
@@ -100,21 +115,22 @@ int main(void) {
 		while (!palReadPad(IOPORT3, GPIOC_BUTTON2)) {
 			for (thrust=500; thrust<1000; thrust+=10) {
 				motor_set(thrust);
-				serial_print("Thrust = ");
-				serial_printn(thrust);
-				serial_println("");
+				debug_print("Thrust = ");
+				debug_printn(thrust);
+				debug_println("");
 				chThdSleepMilliseconds(50);
 			}
 			chThdSleepMilliseconds(1000);
 			for (thrust=1000; thrust>500; thrust-=10) {
 				motor_set(thrust);
-				serial_print("Thrust = ");
-				serial_printn(thrust);
-				serial_println("");
+				debug_print("Thrust = ");
+				debug_printn(thrust);
+				debug_println("");
 				chThdSleepMilliseconds(50);
 			}
 			chThdSleepMilliseconds(2000);
 		}
+		chThdSleepMilliseconds(10);
 	}
 	return(0);
 }

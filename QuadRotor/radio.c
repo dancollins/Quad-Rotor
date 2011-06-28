@@ -7,7 +7,17 @@
 #include <ch.h>
 #include <hal.h>
 
+#include <string.h>
+
 #include "radio.h"
+#include "debug.h"
+
+VirtualTimer vt1;
+
+static void ledoff(void *p) {
+	(void)p;
+	palSetPad(IOPORT2, GPIOB_LED2);
+}
 
 /*
  * This callback is invoked when a transmission buffer has been completely
@@ -39,7 +49,13 @@ static void rxerr(UARTDriver *uartp, uartflags_t e) {
  */
 static void rxchar(UARTDriver *uartp, uint16_t c) {
 	(void)uartp;
-	(void)c;
+	debug_println(c);
+	palClearPad(IOPORT2, GPIOB_LED2);
+	chSysLockFromIsr();
+	if (chVTIsArmedI(&vt1))
+		chVTResetI(&vt1);
+	chVTSetI(&vt1, MS2ST(100), ledoff, NULL);
+	chSysUnlockFromIsr();
 }
 
 /*
@@ -63,16 +79,9 @@ static UARTConfig uart_cfg = {
 
 void radio_init(void) {
 	uartStart(&UARTD3, &uart_cfg);
-	//radio = &UARTD3; // Use SerialDriver3 as radio output
 }
 
 void radio_print(const char *msg) {
-  while (*msg)
-    chIOPut(radio, *msg++);
+    uartStartSend(&UARTD3, strlen(msg), msg);
 }
 
-void radio_println(const char *msg) {
-	/*radio_print(msg);
-	chIOPut(radio, '\n');*/
-	uartStartSend(&UARTD3, 14, "Hello World!\r\n");
-}

@@ -18,4 +18,7 @@ static void rxerr (UARTDriver *uartp, uartflags_t e); // Receive Error (mask is 
 static void rxchar (UARTDriver *uartp, uint16_t c); // Character received, but application isn't ready to receive
 static void rxend (UARTDriver *uartp); // Receive buffer is completely written
 
+void radio_init(void);
+void radio_print(const char *msg);
+
 #endif
