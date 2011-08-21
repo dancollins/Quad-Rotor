@@ -125,3 +125,16 @@
 #define STM32_UART_USART1_DMA_ERROR_HOOK()  chSysHalt()
 #define STM32_UART_USART2_DMA_ERROR_HOOK()  chSysHalt()
 #define STM32_UART_USART3_DMA_ERROR_HOOK()  chSysHalt()
+
+/*
+ * I2C driver system settings.
+ */
+#define STM32_I2C_USE_I2C1                  TRUE
+#define STM32_I2C_USE_I2C2                  FALSE
+#define STM32_I2C_I2C1_IRQ_PRIORITY         10
+#define STM32_I2C_I2C2_IRQ_PRIORITY         10
+#define STM32_I2C_I2C1_DMA_PRIORITY         4
+#define STM32_I2C_I2C2_DMA_PRIORITY         4
+#define STM32_I2C_I2C1_DMA_ERROR_HOOK()     chSysHalt()
+#define STM32_I2C_I2C2_DMA_ERROR_HOOK()     chSysHalt()
+

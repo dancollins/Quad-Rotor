@@ -49,6 +49,7 @@
 #include "spi.h"
 #include "uart.h"
 #include "mmc_spi.h"
+#include "i2c.h"
 
 /*===========================================================================*/
 /* External declarations.                                                    */

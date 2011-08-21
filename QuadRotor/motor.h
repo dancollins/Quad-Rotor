@@ -9,6 +9,6 @@
 
 void motor_init(void);
 void motor_refresh(PWMDriver*);
-void motor_set(uint16_t thrust);
+void motor_set(int16_t thrust, int16_t pitch, int16_t roll, int16_t yaw);
 
 #endif

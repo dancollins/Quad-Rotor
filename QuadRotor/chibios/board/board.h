@@ -99,12 +99,14 @@
 /*
  * Port B setup.
  * Everything input with pull-up except:
+ * PB6 - Alternate Open Drain output 10MHz (I2C1)
+ * PB7 - Alternate Open Drain output 10MHz (I2C1)
  * PB8 - Push Pull output	(LED1)
  * PB9 - Push Pull output	(LED2)
  * PB10 - Alternate output	(USART3 TX).
  * PB11 - Normal input		(USART3 RX).
  */
-#define VAL_GPIOBCRL            0x88888888      /*  PB7...PB0 */
+#define VAL_GPIOBCRL            0xDD888888      /*  PB7...PB0 */
 #define VAL_GPIOBCRH            0x88884B33      /* PB15...PB8 */
 #define VAL_GPIOBODR            0xFFFFFFFF
 

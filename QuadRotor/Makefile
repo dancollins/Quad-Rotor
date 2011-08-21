@@ -79,7 +79,11 @@ CSRC = $(PORTSRC) \
        main.c \
        motor.c \
        debug.c \
-       radio.c
+       radio.c \
+       i2cdriver.c \
+       accel.c \
+       gyro.c \
+       imu.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -170,7 +174,7 @@ DINCDIR =
 DLIBDIR =
 
 # List all default libraries here
-DLIBS =
+DLIBS = -lm
 
 #
 # End of default section

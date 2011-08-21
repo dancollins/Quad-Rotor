@@ -219,6 +219,7 @@
  *          specification are included in the kernel.
  *
  * @note    The default is @p TRUE.
+
  * @note    Requires @p CH_USE_CONDVARS.
  */
 #if !defined(CH_USE_CONDVARS_TIMEOUT) || defined(__DOXYGEN__)

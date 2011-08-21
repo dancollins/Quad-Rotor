@@ -91,6 +91,9 @@ void halInit(void) {
 #if HAL_USE_UART || defined(__DOXYGEN__)
   uartInit();
 #endif
+#if HAL_USE_I2C || defined(__DOXYGEN__)
+  i2cInit();
+#endif
   /* Board specific initialization.*/
   boardInit();
 }
