@@ -92,7 +92,7 @@ static msg_t RadioThread(void *arg) { // Radio thread
 	
 	while (1) {
 		uartStartReceive(&UARTD3, 10, radio_buffer);
-		radio_data = (radio_buffer[0]-50)*10;
+		radio_data = (radio_buffer[0])*10;
 	}
 	return 0;
 }
@@ -100,7 +100,7 @@ static msg_t RadioThread(void *arg) { // Radio thread
 /*
 	I2C Thread
 */
-static WORKING_AREA(waControllerThread, 512); // Working area for the thread
+static WORKING_AREA(waControllerThread, 1024); // Working area for the thread
 
 static msg_t ControllerThread(void *arg) { // Controller thread
 	(void)arg; // Don't need arguments...
@@ -114,7 +114,7 @@ static msg_t ControllerThread(void *arg) { // Controller thread
 		accel_read();
 		gyro_read();
 		
-		IMUupdate((float)gyro.x * 0.0012141420883438813, (float)gyro.y * 0.0012141420883438813, (float)gyro.z * 0.0012141420883438813, (float)accel.x, (float)accel.y, (float)accel.z);
+		IMUupdate(gyro.x * 0.0012141420883438813, gyro.y * 0.0012141420883438813, gyro.z * 0.0012141420883438813, accel.x, accel.y, accel.z);
 		
 		float norm_x = 2*(q0*q2 - q1*q3);
 		float norm_y = 2*(q0*q1 + q2*q3);
@@ -155,7 +155,7 @@ static msg_t ControllerThread(void *arg) { // Controller thread
 
 		motor_set(0, pitch_rate_comp, roll_rate_comp, 0);
 		
-		time += MS2ST(10);
+		time += MS2ST(100);
 		chThdSleepUntil(time);
 	}
 	return 0;
@@ -200,11 +200,15 @@ int main(void) {
 	// Create Threads
 	chThdCreateStatic(waLEDThread, sizeof(waLEDThread), NORMALPRIO, LEDThread, NULL); // Create blinky LED thread
 	chThdCreateStatic(waRadioThread, sizeof(waRadioThread), NORMALPRIO, RadioThread, NULL); // Create thread for reading radio data
-	chThdCreateStatic(waControllerThread, sizeof(waControllerThread), NORMALPRIO, ControllerThread, NULL); // Create thread for processing IMU
+	//chThdCreateStatic(waControllerThread, sizeof(waControllerThread), NORMALPRIO, ControllerThread, NULL); // Create thread for processing IMU
 
 	// This is where the main thread actually starts...
 	while (1) {
-		chThdSleepMilliseconds(100);
+		chThdSleepMilliseconds(10);
+		if (radio_data) {
+			motor_set(radio_data, 0, 0, 0);
+			radio_data = 0;
+		}
 	}
 	return(0);
 }

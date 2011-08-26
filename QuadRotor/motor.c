@@ -24,7 +24,7 @@ static PWMConfig pwmcfg = {
 	0
 };
 
-uint16_t motors[4] = {0, 0, 0, 0};
+uint16_t motors[4] = {500, 500, 500, 500};
 
 void motor_init(void) {
 	pwmStart(&PWMD2, &pwmcfg);
@@ -38,10 +38,10 @@ void motor_init(void) {
 void motor_refresh(PWMDriver *pwmp) {
 	(void)pwmp;
 	static uint8_t led_state = 0;
-	pwmEnableChannel(&PWMD2, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 500 + motors[0]));
-	pwmEnableChannel(&PWMD2, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 500 + motors[1]));
-	pwmEnableChannel(&PWMD2, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 500 + motors[2]));
-	pwmEnableChannel(&PWMD2, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, 500 + motors[3]));
+	pwmEnableChannel(&PWMD2, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[0]));
+	pwmEnableChannel(&PWMD2, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[1]));
+	pwmEnableChannel(&PWMD2, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[2]));
+	pwmEnableChannel(&PWMD2, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[3]));
 	if (led_state) {
 		led_state = 0;
 		palSetPad(IOPORT2, GPIOB_LED2); // Turn LED off
@@ -52,7 +52,7 @@ void motor_refresh(PWMDriver *pwmp) {
 }
 
 void motor_set(int16_t thrust, int16_t pitch, int16_t roll, int16_t yaw) {
-	if(thrust < 0) {
+	/*if(thrust < 0) {
 		thrust = 0;
 	}
 	if(thrust > 900) {
@@ -73,11 +73,15 @@ void motor_set(int16_t thrust, int16_t pitch, int16_t roll, int16_t yaw) {
 	} else if(abs(pitch) + abs(roll) + abs(yaw) > thrust) {
 		// Scale yaw value.
 		yaw = (yaw > 0 ? 1 : -1) * (thrust - abs(pitch) - abs(roll));
-	}
+	}*/
 	
-	motors[0] = thrust + pitch + roll - yaw;
+	/*motors[0] = thrust + pitch + roll - yaw;
 	motors[1] = thrust + pitch - roll + yaw;
 	motors[2] = thrust - pitch + roll + yaw;
-	motors[3] = thrust - pitch - roll - yaw;
+	motors[3] = thrust - pitch - roll - yaw;*/
+	motors[0] = thrust;
+	motors[1] = thrust;
+	motors[2] = thrust;
+	motors[3] = thrust;
 }
 
