@@ -4,8 +4,8 @@
 	author: Dan Collins
 	
 	Interfaces with a number of sensors:
-		* 3 axis accelerometer
-		- 3 axis gyroscope
+		+ 3 axis accelerometer
+		+ 3 axis gyroscope
 		- Motor speed
 		- GPS
 	

@@ -1,6 +1,7 @@
 # Quad Rotor Control Board
 
-This source was built for the STM32F103RBT6 from ST Microelectronics using Code Sourceries' Sourcery G++ ARM-EABI compiler.
+This source was built for the STM32F103RBT6 from ST Microelectronics using a GCC toolchain (jsnyder/arm-eabi-toolchain).  At the time of writing this
+(and my stuff is always out of date!) I'm using GCC 4.5.2  Even while writing this, it's out of date (Could be using 4.6.0) but I'm not.
 
 
 ## Contents
@@ -15,14 +16,14 @@ Any files used to make this work, such as EAGLE design files, will also be inclu
 structure, but if not send me an email to tell me a better way!
 
 ## To Do List
-* Radio Communication
+- Radio Communication
 	* Debugging Information
 	* Current 'Job'
 	* Heading
 	* Attitude and Altitude
-* Sensor Interface
-	* Gyroscope
-	* Accelerometer
+- Sensor Interface
+	+ Gyroscope
+	+ Accelerometer
 	* GPS
 	* Motor Speed
 
