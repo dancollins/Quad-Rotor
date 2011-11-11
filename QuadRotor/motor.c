@@ -42,13 +42,6 @@ void motor_refresh(PWMDriver *pwmp) {
 	pwmEnableChannel(&PWMD2, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[1]));
 	pwmEnableChannel(&PWMD2, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[2]));
 	pwmEnableChannel(&PWMD2, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD2, motors[3]));
-	if (led_state) {
-		led_state = 0;
-		palSetPad(IOPORT2, GPIOB_LED2); // Turn LED off
-	} else {
-		led_state = 1;
-		palClearPad(IOPORT2, GPIOB_LED2); // Turn LED on
-	}
 }
 
 void motor_set(int16_t thrust, int16_t pitch, int16_t roll, int16_t yaw) {

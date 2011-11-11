@@ -92,7 +92,7 @@ static msg_t RadioThread(void *arg) { // Radio thread
 	
 	while (1) {
 		uartStartReceive(&UARTD3, 10, radio_buffer);
-		radio_data = (radio_buffer[0])*10;
+		radio_data = (radio_buffer[0])*10; // This number is between 500 and 900 inclusive
 	}
 	return 0;
 }
@@ -205,10 +205,7 @@ int main(void) {
 	// This is where the main thread actually starts...
 	while (1) {
 		chThdSleepMilliseconds(10);
-		if (radio_data) {
-			motor_set(radio_data, 0, 0, 0);
-			radio_data = 0;
-		}
+		motor_set(radio_data, 0, 0, 0);
 	}
 	return(0);
 }
