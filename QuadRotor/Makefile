@@ -104,7 +104,7 @@ ACPPSRC =
 #       option that results in lower performance and larger code size.
 TCSRC =
 
-# C sources to be compiled in THUMB mode regardless of the global setting.
+# C++ sources to be compiled in THUMB mode regardless of the global setting.
 # NOTE: Mixing ARM and THUMB mode enables the -mthumb-interwork compiler
 #       option that results in lower performance and larger code size.
 TCPPSRC =

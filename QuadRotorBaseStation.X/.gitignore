@@ -1,0 +1,9 @@
+# Compiled Source #
+###################
+/build
+/dist
+
+# Other Shit I Don't Want to Sync #
+###################################
+.dep.inc
+
