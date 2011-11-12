@@ -45,8 +45,9 @@
 #include "imu.h" // IMU processor
 
 #include <math.h> // Trig functions
+#include <string.h> // Radio parsing
 
-unsigned int radio_data = 0;
+unsigned int thrust = 0;
 
 int16_t saturate (int16_t var, int absmax) {
 	if(var > absmax) {
@@ -89,11 +90,41 @@ static msg_t RadioThread(void *arg) { // Radio thread
 	(void)arg; // Don't need arguments...
 	
 	unsigned char radio_buffer[10] = {0};
+	unsigned int old_thrust = 0;
+	char *data_string; // Holds the incomming data string
+	unsigned char in_checksum = 0; // holds the incomming checksum
+	unsigned char checksum = 0; // The checksum calculated on the fly (that's a pun!)
+	unsigned char i = 0; // loop index
 	
 	while (1) {
-		uartStartReceive(&UARTD3, 10, radio_buffer);
-		radio_data = (radio_buffer[0])*10; // This number is between 500 and 900 inclusive
+		uartStartReceive(&UARTD3, 10, radio_buffer); // Get radio data from UART
+		chThdSleepMilliseconds(10);
+		
+		old_thrust = thrust; // Store old value to revert to if new data is bad
+
+		data_string = strstr(&radio_buffer[0], "t"); // Find first occurance of 't' TODO: Expand for larger datasets
+
+		if (data_string != NULL) {
+			thrust = ++data_string; // Store first character into thrust
+			in_checksum = ++data_string; // Next byte is the checksum
+		}
+
+		if (thrust < 500) // Limit the value to this range
+			thrust = 500;
+		if (thrust > 900)
+			thrust = 900;
+			
+		checksum = 't' ^ thrust; // The 't' value received correctly because it passed the strstr check
+		
+		if (checksum != in_checksum)
+			thrust = old_thrust; // bad checksum, so discard new data
+			debug_println("Bad Checksum");
+			
+		for (i=0; i<10; i++) {
+			radio_buffer[i] = 0; // Clear buffer
+		}
 	}
+	
 	return 0;
 }
 
@@ -205,7 +236,7 @@ int main(void) {
 	// This is where the main thread actually starts...
 	while (1) {
 		chThdSleepMilliseconds(10);
-		motor_set(radio_data, 0, 0, 0);
+		motor_set(thrust, 0, 0, 0);
 	}
 	return(0);
 }
