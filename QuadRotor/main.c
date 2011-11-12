@@ -117,7 +117,7 @@ static msg_t RadioThread(void *arg) { // Radio thread
 				thrust = 90;
 		
 			if (checksum != in_checksum) {
-				debug_print("Radio: Error: Bad Checksum: ");
+				debug_print("Radio: Error: Bad Checksum: "); // Report bad checksum
 				debug_printn(in_checksum);
 				debug_print(" Expected: ");
 				debug_printn(checksum);
