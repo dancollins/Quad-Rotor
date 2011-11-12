@@ -91,8 +91,8 @@ static msg_t RadioThread(void *arg) { // Radio thread
 	
 	unsigned char radio_buffer[10] = {0};
 	unsigned int old_thrust = 0;
-	char *data_string; // Holds the incomming data string
-	unsigned char in_checksum = 0; // holds the incomming checksum
+	char *data_string; // Holds the incoming data string
+	unsigned char in_checksum = 0; // holds the incoming checksum
 	unsigned char checksum = 0; // The checksum calculated on the fly (that's a pun!)
 	unsigned char i = 0; // loop index
 	
@@ -102,23 +102,32 @@ static msg_t RadioThread(void *arg) { // Radio thread
 		
 		old_thrust = thrust; // Store old value to revert to if new data is bad
 
-		data_string = strstr(&radio_buffer[0], "t"); // Find first occurance of 't' TODO: Expand for larger datasets
+		data_string = strstr(radio_buffer, "t"); // Find first occurance of 't' TODO: Expand for larger datasets
 
 		if (data_string != NULL) {
-			thrust = ++data_string; // Store first character into thrust
-			in_checksum = ++data_string; // Next byte is the checksum
-		}
+			data_string++; // Move to first character
+			thrust = *data_string++; // Store first character into thrust
+			in_checksum = *data_string++; // Next byte is the checksum
 
-		if (thrust < 500) // Limit the value to this range
-			thrust = 500;
-		if (thrust > 900)
-			thrust = 900;
+			if (thrust < 500) // Limit the value to this range
+				thrust = 500;
+			if (thrust > 900)
+				thrust = 900;
 			
-		checksum = 't' ^ thrust; // The 't' value received correctly because it passed the strstr check
+			checksum = 't' ^ (char)thrust; // The 't' value received correctly because it passed the strstr check
 		
-		if (checksum != in_checksum)
-			thrust = old_thrust; // bad checksum, so discard new data
-			debug_println("Bad Checksum");
+			if (checksum != in_checksum) {
+				debug_print("Bad Checksum: ");
+				debug_printn(in_checksum);
+				debug_print(" Expected: ");
+				debug_printn(checksum);
+				debug_println(".");
+
+				debug_println(radio_buffer); // Print the incoming string
+
+				thrust = old_thrust; // bad checksum, so discard new data
+			}
+		}
 			
 		for (i=0; i<10; i++) {
 			radio_buffer[i] = 0; // Clear buffer
@@ -236,7 +245,7 @@ int main(void) {
 	// This is where the main thread actually starts...
 	while (1) {
 		chThdSleepMilliseconds(10);
-		motor_set(thrust, 0, 0, 0);
+		motor_set(thrust*10, 0, 0, 0);
 	}
 	return(0);
 }
