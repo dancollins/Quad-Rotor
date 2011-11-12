@@ -26,17 +26,14 @@ static const I2CConfig i2c_conf = {
 };
 
 void i2cdriver_init(void) {
-	debug_print("Starting I2C...");
 	i2cStart(&I2CD1, &i2c_conf); // Start the I2C1 driver
-	debug_println("Done");
+	debug_println("Init: I2C Driver Active");
 	
-	debug_print("Starting Accel...");
 	accel_init(); // Prepare the accelerometer
-	debug_println("Done");
+	debug_println("Init: Accelerometer Active");
 	chThdSleepMilliseconds(100); // May not be needed.  Using as in example code.
 	
-	debug_print("Starting Gyro...");
 	gyro_init(); // Prepare the gyroscope
-	debug_println("Done");
+	debug_println("Init: Gyroscope Active");
 	chThdSleepMilliseconds(100); // Also may not be needed.
 }

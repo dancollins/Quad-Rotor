@@ -117,7 +117,7 @@ static msg_t RadioThread(void *arg) { // Radio thread
 			checksum = 't' ^ (char)thrust; // The 't' value received correctly because it passed the strstr check
 		
 			if (checksum != in_checksum) {
-				debug_print("Bad Checksum: ");
+				debug_print("Radio: Error: Bad Checksum: ");
 				debug_printn(in_checksum);
 				debug_print(" Expected: ");
 				debug_printn(checksum);
@@ -224,15 +224,15 @@ int main(void) {
 	// Start Serial Console
 	sdStart(&SD1, NULL);
 	console = &SD1; // Use SerialDriver1 as console output
-	debug_println("Serial Active...");
+	debug_println("Init: Serial Driver Active");
 	
 	// Start Motors
 	motor_init();
-	debug_println("Motors Active...");
+	debug_println("Init: Motor Driver Active");
 	
 	// Start Radio Comms
 	radio_init();
-	debug_println("Radio Active...");
+	debug_println("Init: Radio Driver Active");
 	
 	// Start the I2C Module
 	i2cdriver_init();
