@@ -22,7 +22,7 @@ void _ISR _U1RXInterrupt(void); // Interrupt for bluetooth receive
 void uart_putChar(char c, char p);
 void uart_putString(const char *s, char p);
 void clear_bt_buf(void);
-int get_thrust(void); // Gets the thrust value from the bt buffer
+int get_thrust(int old_thrust); // Gets the thrust value from the bt buffer
 
 volatile char unlock = 0; // System lock/unlock determined by this char
 
@@ -48,6 +48,7 @@ void _ISR _U1RXInterrupt(void) {
             bt_idx = 0;
         }
     }
+    // This problem resulted in the sending of a 0 thrust after every transmission
     IFS0bits.U1RXIF = 0; // Clear flag
 }
 
@@ -103,11 +104,12 @@ int main(void) {
     init();
     int thrust = 0; // Holds thrust %age
     int old_thrust = 0; // Holds old thrust value.  Used to limit the number of bytes sent
+    int checksum = 0; // checksum for outgoing serial data.  Integrity is important!
 
     while(1) {
         if (unlock) { // If the safety switch is active
             LATBbits.LATB5 = 1; // Green LED
-            thrust = get_thrust();
+            thrust = get_thrust(old_thrust);
             clear_bt_buf();
             __delay_ms(5);
         } else { // System is locked!
@@ -117,7 +119,12 @@ int main(void) {
         }
         if (thrust != old_thrust) {
             old_thrust = thrust;
+            uart_putChar('t', 2); // t for thrust, same as amarino
             uart_putChar(thrust, 2);
+
+            checksum = ('t' ^ thrust); // Checksum is pretty simple for two bytes!
+            
+            uart_putChar(checksum, 2);
         }
     }
 
@@ -151,7 +158,11 @@ void clear_bt_buf(void) {
     bt_idx = 0;
 }
 
-int get_thrust(void) {
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min; // Stolen from Arduino
+}
+
+int get_thrust(int old_thrust) {
     char thrust[4]; // Hold ascii thrust
     int i = 0; // Temp index
     char *s; // Pointer to thrust string
@@ -161,7 +172,7 @@ int get_thrust(void) {
         while (*s) {
             thrust[i++] = *s++;
         }
-        return atoi((char*)thrust);
+        return map(atoi((char*)thrust), 0, 99, 50, 90);
     }
-    return 0;
+    return old_thrust; // If the function comes up empty, we want it to return a value that wont be transmitted
 }

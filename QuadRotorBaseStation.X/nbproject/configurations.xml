@@ -39,7 +39,7 @@
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>C30</languageToolchain>
         <languageToolchainVersion>3_30b</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <compileType>
         <linkerTool>
@@ -91,15 +91,15 @@
         <property key="TIMER4" value="true"/>
         <property key="TIMER3" value="true"/>
         <property key="SPI 2" value="true"/>
-        <property key="TIMER2" value="true"/>
         <property key="SPI 1" value="true"/>
+        <property key="TIMER2" value="true"/>
         <property key="TIMER1" value="true"/>
         <property key="programmertogo.imagename" value=""/>
         <property key="CRC" value="true"/>
         <property key="I2C2" value="true"/>
         <property key="I2C1" value="true"/>
-        <property key="Freeze All Other Peripherals" value="true"/>
         <property key="programoptions.preserveprogramrange.end" value="0xff"/>
+        <property key="Freeze All Other Peripherals" value="true"/>
       </PICkit3PlatformTool>
     </conf>
   </confs>
