@@ -47,7 +47,7 @@
 #include <math.h> // Trig functions
 #include <string.h> // Radio parsing
 
-unsigned int thrust = 0;
+unsigned int thrust = 50; // This is a zero speed TODO: Make the transformation in the motor driver
 
 int16_t saturate (int16_t var, int absmax) {
 	if(var > absmax) {
@@ -90,7 +90,7 @@ static msg_t RadioThread(void *arg) { // Radio thread
 	(void)arg; // Don't need arguments...
 	
 	unsigned char radio_buffer[10] = {0};
-	unsigned int old_thrust = 0;
+	unsigned int old_thrust = 50; // As far as the motor goes, 500 is a speed of zero
 	char *data_string; // Holds the incoming data string
 	unsigned char in_checksum = 0; // holds the incoming checksum
 	unsigned char checksum = 0; // The checksum calculated on the fly (that's a pun!)
@@ -109,15 +109,15 @@ static msg_t RadioThread(void *arg) { // Radio thread
 			thrust = *data_string++; // Store first character into thrust
 			in_checksum = *data_string++; // Next byte is the checksum
 
-			if (thrust < 500) // Limit the value to this range
-				thrust = 500;
-			if (thrust > 900)
-				thrust = 900;
-			
 			checksum = 't' ^ (char)thrust; // The 't' value received correctly because it passed the strstr check
+
+			if (thrust < 50) // Limit the value to this range
+				thrust = 50;
+			if (thrust > 90)
+				thrust = 90;
 		
 			if (checksum != in_checksum) {
-				debug_print("Radio: Error: Bad Checksum: ");
+				debug_print("Radio: Error: Bad Checksum: "); // Report bad checksum
 				debug_printn(in_checksum);
 				debug_print(" Expected: ");
 				debug_printn(checksum);
