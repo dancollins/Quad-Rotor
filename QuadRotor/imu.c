@@ -33,6 +33,8 @@
 #define Ki 0.005f		// integral gain governs rate of convergence of gyroscope biases
 #define halfT (0.5f / 100)		// half the sample period
 
+#define NR_ITTR_COUNT 5
+
 //---------------------------------------------------------------------------------------------------
 // Variable definitions
 
@@ -49,7 +51,7 @@ void IMUupdate(float gx, float gy, float gz, float ax, float ay, float az) {
 	float ex, ey, ez;         
 	
 	// normalise the measurements
-	norm = sqrt((ax*ax) + (ay*ay) + (az*az));       
+	norm = nr_sqrt((ax*ax) + (ay*ay) + (az*az));       
 	ax = ax / norm;
 	ay = ay / norm;
 	az = az / norm;
@@ -81,11 +83,26 @@ void IMUupdate(float gx, float gy, float gz, float ax, float ay, float az) {
 	q3 = q3 + (q0*gz + q1*gy - q2*gx)*halfT;  
 	
 	// normalise quaternion
-	norm = sqrt((q0*q0) + (q1*q1) + (q2*q2) + (q3*q3));
+	norm = nr_sqrt((q0*q0) + (q1*q1) + (q2*q2) + (q3*q3));
 	q0 = q0 / norm;
 	q1 = q1 / norm;
 	q2 = q2 / norm;
 	q3 = q3 / norm;
+}
+
+float nr_sqrt(float input) { // Replacement square root function
+	float output = 10.0; // Holds output value of itteration, and initial guess
+	float old_output = 0.0; // Stores old output incase we can terminate early
+	int i; // Used for the for loop.  Declare here for C99
+
+	for (i=0; i<NR_ITTR_COUNT; i++) {
+		old_output = output;
+		output = output - (((output*output)-input)/(2*output)); // SQRT itteration
+		if (old_output == output) // If the value has not changed
+			break;
+	}
+
+	return output;
 }
 
 //====================================================================================================

@@ -19,6 +19,7 @@ extern float q0, q1, q2, q3;	// quaternion elements representing the estimated o
 // Function declaration
 
 void IMUupdate(float gx, float gy, float gz, float ax, float ay, float az);
+float nr_sqrt(float input);
 
 #endif
 //=====================================================================================================

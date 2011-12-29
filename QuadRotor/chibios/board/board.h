@@ -89,8 +89,8 @@
  * Port A setup.
  * Everything input with pull-up except:
  * PA0-PA3 - Alternate Output (MOTORn)
- * PA9	- Alternate output  (USART1 TX).
- * PA10	- Normal input      (USART1 RX).
+ * PA9	- Alternate output  (USART1 TX). DEBUG
+ * PA10	- Normal input      (USART1 RX). DEBUG
  */
 #define VAL_GPIOACRL            0x8888BBBB      /*  PA7...PA0 */
 #define VAL_GPIOACRH            0x888884B8      /* PA15...PA8 */
@@ -103,8 +103,8 @@
  * PB7 - Alternate Open Drain output 10MHz (I2C1)
  * PB8 - Push Pull output	(LED1)
  * PB9 - Push Pull output	(LED2)
- * PB10 - Alternate output	(USART3 TX).
- * PB11 - Normal input		(USART3 RX).
+ * PB10 - Alternate output	(USART3 TX). RADIO
+ * PB11 - Normal input		(USART3 RX). RADIO
  */
 #define VAL_GPIOBCRL            0xDD888888      /*  PB7...PB0 */
 #define VAL_GPIOBCRH            0x88884B33      /* PB15...PB8 */

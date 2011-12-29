@@ -47,7 +47,7 @@
 #include <math.h> // Trig functions
 #include <string.h> // Radio parsing
 
-unsigned int thrust = 50; // This is a zero speed TODO: Make the transformation in the motor driver
+unsigned int thrust = 50; // This is a zero speed TODO: Have the motor driver accept 0 to 100
 
 int16_t saturate (int16_t var, int absmax) {
 	if(var > absmax) {
@@ -91,6 +91,7 @@ static msg_t RadioThread(void *arg) { // Radio thread
 	
 	unsigned char radio_buffer[10] = {0};
 	unsigned int old_thrust = 50; // As far as the motor goes, 500 is a speed of zero
+	unsigned int new_thrust = 50; // As far as the motor goes, 500 is a speed of zero
 	char *data_string; // Holds the incoming data string
 	unsigned char in_checksum = 0; // holds the incoming checksum
 	unsigned char checksum = 0; // The checksum calculated on the fly (that's a pun!)
@@ -98,23 +99,24 @@ static msg_t RadioThread(void *arg) { // Radio thread
 	
 	while (1) {
 		uartStartReceive(&UARTD3, 10, radio_buffer); // Get radio data from UART
-		chThdSleepMilliseconds(10);
+		chThdSleepMilliseconds(20);
 		
 		old_thrust = thrust; // Store old value to revert to if new data is bad
 
-		data_string = strstr(radio_buffer, "t"); // Find first occurance of 't' TODO: Expand for larger datasets
+		data_string = strstr(radio_buffer, "t"); // Find first occurance of 't' TODO: pick a more meaningful byte
 
 		if (data_string != NULL) {
 			data_string++; // Move to first character
-			thrust = *data_string++; // Store first character into thrust
-			in_checksum = *data_string++; // Next byte is the checksum
+			new_thrust = *data_string; // Store first character into thrust
+			data_string++; // Move to next character
+			in_checksum = *data_string; // Next byte is the checksum
 
-			checksum = 't' ^ (char)thrust; // The 't' value received correctly because it passed the strstr check
+			checksum = 't' ^ (char)new_thrust; // The 't' value received correctly because it passed the strstr check
 
-			if (thrust < 50) // Limit the value to this range
-				thrust = 50;
-			if (thrust > 90)
-				thrust = 90;
+			if (new_thrust < 50) // Limit the value to this range
+				new_thrust = 50;
+			if (new_thrust > 90)
+				new_thrust = 90;
 		
 			if (checksum != in_checksum) {
 				debug_print("Radio: Error: Bad Checksum: "); // Report bad checksum
@@ -126,6 +128,8 @@ static msg_t RadioThread(void *arg) { // Radio thread
 				debug_println(radio_buffer); // Print the incoming string
 
 				thrust = old_thrust; // bad checksum, so discard new data
+			} else {
+				thrust = new_thrust; // good checksum, so keep new data
 			}
 		}
 			
@@ -154,7 +158,7 @@ static msg_t ControllerThread(void *arg) { // Controller thread
 		accel_read();
 		gyro_read();
 		
-		IMUupdate(gyro.x * 0.0012141420883438813, gyro.y * 0.0012141420883438813, gyro.z * 0.0012141420883438813, accel.x, accel.y, accel.z);
+		//IMUupdate(gyro.x * 0.0012141420883438813, gyro.y * 0.0012141420883438813, gyro.z * 0.0012141420883438813, accel.x, accel.y, accel.z);
 		
 		float norm_x = 2*(q0*q2 - q1*q3);
 		float norm_y = 2*(q0*q1 + q2*q3);
