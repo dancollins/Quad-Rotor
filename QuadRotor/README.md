@@ -6,7 +6,6 @@ This source was built for the STM32F103RBT6 from ST Microelectronics using a GCC
 
 ## Contents
 
-* ChibiOS
 * Quad Rotor Controller Source
 
 ## Description
@@ -29,4 +28,4 @@ structure, but if not send me an email to tell me a better way!
 
 ----------
 
-Copyright [Dan Collins](http://dancollins.github.com/) 2011.  Released under the POPL licence (see LICENCE.TXT)
+Copyright [Dan Collins](http://dancollins.github.com/) 2012.  Released under the POPL licence (see LICENCE.TXT)

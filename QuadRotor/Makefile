@@ -5,7 +5,12 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16 -mfloat-abi=soft
+  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16
+endif
+
+# C specific options here (added to USE_OPT).
+ifeq ($(USE_COPT),)
+  USE_COPT = 
 endif
 
 # C++ specific options here (added to USE_OPT).
@@ -23,9 +28,9 @@ ifeq ($(USE_THUMB),)
   USE_THUMB = yes
 endif
 
-# Enable register caching optimization (read documentation).
-ifeq ($(USE_CURRP_CACHING),)
-  USE_CURRP_CACHING = no
+# Enable this if you want to see the full log while compiling.
+ifeq ($(USE_VERBOSE_COMPILE),)
+  USE_VERBOSE_COMPILE = no
 endif
 
 #
@@ -52,25 +57,24 @@ endif
 # Define project name here
 PROJECT = flight_controller
 
-# Define linker script file here
-LDSCRIPT= ch.ld
-
-# Imported source files
+# Imported source files and paths
 CHIBIOS = chibios
-include $(CHIBIOS)/os/hal/platforms/STM32/platform.mk
+include $(CHIBIOS)/os/hal/platforms/STM32F1xx/platform.mk
 include $(CHIBIOS)/os/hal/hal.mk
-include $(CHIBIOS)/os/ports/GCC/ARMCMx/STM32/port.mk
+include $(CHIBIOS)/os/ports/GCC/ARMCMx/STM32F1xx/port.mk
 include $(CHIBIOS)/os/kernel/kernel.mk
 
 # Board
 BOARDSRC = $(CHIBIOS)/board/board.c # List of all the board related files.
 BOARDINC = $(CHIBIOS)/board
 
+# Define linker script file here
+LDSCRIPT= $(PORTLD)/STM32F103xB.ld
+
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
 CSRC = $(PORTSRC) \
        $(KERNSRC) \
-       $(TESTSRC) \
        $(HALSRC) \
        $(PLATFORMSRC) \
        $(BOARDSRC) \
@@ -104,7 +108,7 @@ ACPPSRC =
 #       option that results in lower performance and larger code size.
 TCSRC =
 
-# C++ sources to be compiled in THUMB mode regardless of the global setting.
+# C sources to be compiled in THUMB mode regardless of the global setting.
 # NOTE: Mixing ARM and THUMB mode enables the -mthumb-interwork compiler
 #       option that results in lower performance and larger code size.
 TCPPSRC =
@@ -130,6 +134,7 @@ MCU  = cortex-m3
 TRGT = arm-none-eabi-
 CC   = $(TRGT)gcc
 CPPC = $(TRGT)g++
+CC1	= cc1
 # Enable loading with g++ only if you need C++ runtime support.
 # NOTE: You can use C++ even without C++ support if you are careful. C++
 #       runtime support makes code size explode.
@@ -142,7 +147,7 @@ HEX  = $(CP) -O ihex
 BIN  = $(CP) -O binary
 
 # ARM-specific options here
-AOPT = 
+AOPT =
 
 # THUMB-specific options here
 TOPT = -mthumb -DTHUMB
@@ -213,4 +218,5 @@ endif
 include $(CHIBIOS)/os/ports/GCC/ARMCMx/rules.mk
 
 flash:
-	stm32flash -w $(PROJECT).bin -v /dev/ttyUSB0
+	stm32flash -w build/$(PROJECT).bin /dev/ttyUSB0
+	
