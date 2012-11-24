@@ -41,11 +41,11 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/FreeRTOS/croutine.o ${OBJECTDIR}/src/FreeRTOS/list.o ${OBJECTDIR}/src/FreeRTOS/queue.o ${OBJECTDIR}/src/FreeRTOS/tasks.o ${OBJECTDIR}/src/FreeRTOS/timers.o ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o ${OBJECTDIR}/src/FreeRTOS/portable/port.o ${OBJECTDIR}/src/FreeRTOS/portable/port_asm.o ${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/driver/low-level/board.o ${OBJECTDIR}/src/driver/low-level/iic.o ${OBJECTDIR}/src/driver/low-level/serial.o ${OBJECTDIR}/src/driver/gyro.o ${OBJECTDIR}/src/driver/accel.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/FreeRTOS/croutine.o.d ${OBJECTDIR}/src/FreeRTOS/list.o.d ${OBJECTDIR}/src/FreeRTOS/queue.o.d ${OBJECTDIR}/src/FreeRTOS/tasks.o.d ${OBJECTDIR}/src/FreeRTOS/timers.o.d ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d ${OBJECTDIR}/src/FreeRTOS/portable/port.o.d ${OBJECTDIR}/src/FreeRTOS/portable/port_asm.o.d ${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/src/driver/low-level/board.o.d ${OBJECTDIR}/src/driver/low-level/iic.o.d ${OBJECTDIR}/src/driver/low-level/serial.o.d ${OBJECTDIR}/src/driver/gyro.o.d ${OBJECTDIR}/src/driver/accel.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/driver/low-level/board.o ${OBJECTDIR}/src/driver/low-level/iic.o ${OBJECTDIR}/src/driver/low-level/serial.o ${OBJECTDIR}/src/driver/gyro.o ${OBJECTDIR}/src/driver/accel.o ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o ${OBJECTDIR}/src/FreeRTOS/portable/port.o ${OBJECTDIR}/src/FreeRTOS/portable/port_asm.o ${OBJECTDIR}/src/FreeRTOS/croutine.o ${OBJECTDIR}/src/FreeRTOS/list.o ${OBJECTDIR}/src/FreeRTOS/queue.o ${OBJECTDIR}/src/FreeRTOS/tasks.o ${OBJECTDIR}/src/FreeRTOS/timers.o ${OBJECTDIR}/src/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/driver/low-level/board.o.d ${OBJECTDIR}/src/driver/low-level/iic.o.d ${OBJECTDIR}/src/driver/low-level/serial.o.d ${OBJECTDIR}/src/driver/gyro.o.d ${OBJECTDIR}/src/driver/accel.o.d ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d ${OBJECTDIR}/src/FreeRTOS/portable/port.o.d ${OBJECTDIR}/src/FreeRTOS/portable/port_asm.o.d ${OBJECTDIR}/src/FreeRTOS/croutine.o.d ${OBJECTDIR}/src/FreeRTOS/list.o.d ${OBJECTDIR}/src/FreeRTOS/queue.o.d ${OBJECTDIR}/src/FreeRTOS/tasks.o.d ${OBJECTDIR}/src/FreeRTOS/timers.o.d ${OBJECTDIR}/src/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/FreeRTOS/croutine.o ${OBJECTDIR}/src/FreeRTOS/list.o ${OBJECTDIR}/src/FreeRTOS/queue.o ${OBJECTDIR}/src/FreeRTOS/tasks.o ${OBJECTDIR}/src/FreeRTOS/timers.o ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o ${OBJECTDIR}/src/FreeRTOS/portable/port.o ${OBJECTDIR}/src/FreeRTOS/portable/port_asm.o ${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/driver/low-level/board.o ${OBJECTDIR}/src/driver/low-level/iic.o ${OBJECTDIR}/src/driver/low-level/serial.o ${OBJECTDIR}/src/driver/gyro.o ${OBJECTDIR}/src/driver/accel.o
+OBJECTFILES=${OBJECTDIR}/src/driver/low-level/board.o ${OBJECTDIR}/src/driver/low-level/iic.o ${OBJECTDIR}/src/driver/low-level/serial.o ${OBJECTDIR}/src/driver/gyro.o ${OBJECTDIR}/src/driver/accel.o ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o ${OBJECTDIR}/src/FreeRTOS/portable/port.o ${OBJECTDIR}/src/FreeRTOS/portable/port_asm.o ${OBJECTDIR}/src/FreeRTOS/croutine.o ${OBJECTDIR}/src/FreeRTOS/list.o ${OBJECTDIR}/src/FreeRTOS/queue.o ${OBJECTDIR}/src/FreeRTOS/tasks.o ${OBJECTDIR}/src/FreeRTOS/timers.o ${OBJECTDIR}/src/main.o
 
 
 CFLAGS=
@@ -93,46 +93,6 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/src/FreeRTOS/croutine.o: src/FreeRTOS/croutine.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/croutine.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/croutine.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/croutine.o.d" -o ${OBJECTDIR}/src/FreeRTOS/croutine.o src/FreeRTOS/croutine.c   
-	
-${OBJECTDIR}/src/FreeRTOS/list.o: src/FreeRTOS/list.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/list.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/list.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/list.o.d" -o ${OBJECTDIR}/src/FreeRTOS/list.o src/FreeRTOS/list.c   
-	
-${OBJECTDIR}/src/FreeRTOS/queue.o: src/FreeRTOS/queue.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/queue.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/queue.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/queue.o.d" -o ${OBJECTDIR}/src/FreeRTOS/queue.o src/FreeRTOS/queue.c   
-	
-${OBJECTDIR}/src/FreeRTOS/tasks.o: src/FreeRTOS/tasks.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/tasks.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/tasks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/tasks.o.d" -o ${OBJECTDIR}/src/FreeRTOS/tasks.o src/FreeRTOS/tasks.c   
-	
-${OBJECTDIR}/src/FreeRTOS/timers.o: src/FreeRTOS/timers.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/timers.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/timers.o.d" -o ${OBJECTDIR}/src/FreeRTOS/timers.o src/FreeRTOS/timers.c   
-	
-${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o: src/FreeRTOS/portable/heap_4.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS/portable 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d" -o ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o src/FreeRTOS/portable/heap_4.c   
-	
-${OBJECTDIR}/src/FreeRTOS/portable/port.o: src/FreeRTOS/portable/port.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS/portable 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/portable/port.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/portable/port.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/portable/port.o.d" -o ${OBJECTDIR}/src/FreeRTOS/portable/port.o src/FreeRTOS/portable/port.c   
-	
-${OBJECTDIR}/src/main.o: src/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src 
-	@${RM} ${OBJECTDIR}/src/main.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/main.o.d" -o ${OBJECTDIR}/src/main.o src/main.c   
-	
 ${OBJECTDIR}/src/driver/low-level/board.o: src/driver/low-level/board.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/driver/low-level 
 	@${RM} ${OBJECTDIR}/src/driver/low-level/board.o.d 
@@ -158,7 +118,82 @@ ${OBJECTDIR}/src/driver/accel.o: src/driver/accel.c  nbproject/Makefile-${CND_CO
 	@${RM} ${OBJECTDIR}/src/driver/accel.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/src/driver/accel.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/accel.o.d" -o ${OBJECTDIR}/src/driver/accel.o src/driver/accel.c   
 	
+${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o: src/FreeRTOS/portable/heap_4.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS/portable 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d" -o ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o src/FreeRTOS/portable/heap_4.c   
+	
+${OBJECTDIR}/src/FreeRTOS/portable/port.o: src/FreeRTOS/portable/port.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS/portable 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/portable/port.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/portable/port.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/portable/port.o.d" -o ${OBJECTDIR}/src/FreeRTOS/portable/port.o src/FreeRTOS/portable/port.c   
+	
+${OBJECTDIR}/src/FreeRTOS/croutine.o: src/FreeRTOS/croutine.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/croutine.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/croutine.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/croutine.o.d" -o ${OBJECTDIR}/src/FreeRTOS/croutine.o src/FreeRTOS/croutine.c   
+	
+${OBJECTDIR}/src/FreeRTOS/list.o: src/FreeRTOS/list.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/list.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/list.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/list.o.d" -o ${OBJECTDIR}/src/FreeRTOS/list.o src/FreeRTOS/list.c   
+	
+${OBJECTDIR}/src/FreeRTOS/queue.o: src/FreeRTOS/queue.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/queue.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/queue.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/queue.o.d" -o ${OBJECTDIR}/src/FreeRTOS/queue.o src/FreeRTOS/queue.c   
+	
+${OBJECTDIR}/src/FreeRTOS/tasks.o: src/FreeRTOS/tasks.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/tasks.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/tasks.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/tasks.o.d" -o ${OBJECTDIR}/src/FreeRTOS/tasks.o src/FreeRTOS/tasks.c   
+	
+${OBJECTDIR}/src/FreeRTOS/timers.o: src/FreeRTOS/timers.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/timers.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/timers.o.d" -o ${OBJECTDIR}/src/FreeRTOS/timers.o src/FreeRTOS/timers.c   
+	
+${OBJECTDIR}/src/main.o: src/main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src 
+	@${RM} ${OBJECTDIR}/src/main.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/main.o.d" -o ${OBJECTDIR}/src/main.o src/main.c   
+	
 else
+${OBJECTDIR}/src/driver/low-level/board.o: src/driver/low-level/board.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/driver/low-level 
+	@${RM} ${OBJECTDIR}/src/driver/low-level/board.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/driver/low-level/board.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/low-level/board.o.d" -o ${OBJECTDIR}/src/driver/low-level/board.o src/driver/low-level/board.c   
+	
+${OBJECTDIR}/src/driver/low-level/iic.o: src/driver/low-level/iic.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/driver/low-level 
+	@${RM} ${OBJECTDIR}/src/driver/low-level/iic.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/driver/low-level/iic.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/low-level/iic.o.d" -o ${OBJECTDIR}/src/driver/low-level/iic.o src/driver/low-level/iic.c   
+	
+${OBJECTDIR}/src/driver/low-level/serial.o: src/driver/low-level/serial.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/driver/low-level 
+	@${RM} ${OBJECTDIR}/src/driver/low-level/serial.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/driver/low-level/serial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/low-level/serial.o.d" -o ${OBJECTDIR}/src/driver/low-level/serial.o src/driver/low-level/serial.c   
+	
+${OBJECTDIR}/src/driver/gyro.o: src/driver/gyro.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/driver 
+	@${RM} ${OBJECTDIR}/src/driver/gyro.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/driver/gyro.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/gyro.o.d" -o ${OBJECTDIR}/src/driver/gyro.o src/driver/gyro.c   
+	
+${OBJECTDIR}/src/driver/accel.o: src/driver/accel.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/driver 
+	@${RM} ${OBJECTDIR}/src/driver/accel.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/driver/accel.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/accel.o.d" -o ${OBJECTDIR}/src/driver/accel.o src/driver/accel.c   
+	
+${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o: src/FreeRTOS/portable/heap_4.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS/portable 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d" -o ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o src/FreeRTOS/portable/heap_4.c   
+	
+${OBJECTDIR}/src/FreeRTOS/portable/port.o: src/FreeRTOS/portable/port.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS/portable 
+	@${RM} ${OBJECTDIR}/src/FreeRTOS/portable/port.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/portable/port.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/portable/port.o.d" -o ${OBJECTDIR}/src/FreeRTOS/portable/port.o src/FreeRTOS/portable/port.c   
+	
 ${OBJECTDIR}/src/FreeRTOS/croutine.o: src/FreeRTOS/croutine.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS 
 	@${RM} ${OBJECTDIR}/src/FreeRTOS/croutine.o.d 
@@ -184,45 +219,10 @@ ${OBJECTDIR}/src/FreeRTOS/timers.o: src/FreeRTOS/timers.c  nbproject/Makefile-${
 	@${RM} ${OBJECTDIR}/src/FreeRTOS/timers.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/timers.o.d" -o ${OBJECTDIR}/src/FreeRTOS/timers.o src/FreeRTOS/timers.c   
 	
-${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o: src/FreeRTOS/portable/heap_4.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS/portable 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o.d" -o ${OBJECTDIR}/src/FreeRTOS/portable/heap_4.o src/FreeRTOS/portable/heap_4.c   
-	
-${OBJECTDIR}/src/FreeRTOS/portable/port.o: src/FreeRTOS/portable/port.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/FreeRTOS/portable 
-	@${RM} ${OBJECTDIR}/src/FreeRTOS/portable/port.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/FreeRTOS/portable/port.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/FreeRTOS/portable/port.o.d" -o ${OBJECTDIR}/src/FreeRTOS/portable/port.o src/FreeRTOS/portable/port.c   
-	
 ${OBJECTDIR}/src/main.o: src/main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src 
 	@${RM} ${OBJECTDIR}/src/main.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/src/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/main.o.d" -o ${OBJECTDIR}/src/main.o src/main.c   
-	
-${OBJECTDIR}/src/driver/low-level/board.o: src/driver/low-level/board.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/driver/low-level 
-	@${RM} ${OBJECTDIR}/src/driver/low-level/board.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/driver/low-level/board.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/low-level/board.o.d" -o ${OBJECTDIR}/src/driver/low-level/board.o src/driver/low-level/board.c   
-	
-${OBJECTDIR}/src/driver/low-level/iic.o: src/driver/low-level/iic.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/driver/low-level 
-	@${RM} ${OBJECTDIR}/src/driver/low-level/iic.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/driver/low-level/iic.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/low-level/iic.o.d" -o ${OBJECTDIR}/src/driver/low-level/iic.o src/driver/low-level/iic.c   
-	
-${OBJECTDIR}/src/driver/low-level/serial.o: src/driver/low-level/serial.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/driver/low-level 
-	@${RM} ${OBJECTDIR}/src/driver/low-level/serial.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/driver/low-level/serial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/low-level/serial.o.d" -o ${OBJECTDIR}/src/driver/low-level/serial.o src/driver/low-level/serial.c   
-	
-${OBJECTDIR}/src/driver/gyro.o: src/driver/gyro.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/driver 
-	@${RM} ${OBJECTDIR}/src/driver/gyro.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/driver/gyro.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/gyro.o.d" -o ${OBJECTDIR}/src/driver/gyro.o src/driver/gyro.c   
-	
-${OBJECTDIR}/src/driver/accel.o: src/driver/accel.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/driver 
-	@${RM} ${OBJECTDIR}/src/driver/accel.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/src/driver/accel.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/FreeRTOS/portable" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver" -I"C:/Users/Dan/Projects/Electronics/Quad Rotor/QuadRotorRevB.X/include/driver/low-level" -MMD -MF "${OBJECTDIR}/src/driver/accel.o.d" -o ${OBJECTDIR}/src/driver/accel.o src/driver/accel.c   
 	
 endif
 

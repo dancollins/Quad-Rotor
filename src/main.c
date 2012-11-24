@@ -74,6 +74,8 @@ void testThread(void * pvParameters) {
 
     const float timeConstant = 0.1;
 
+    BYTE outputCount = 0; // This is used to rate limit the serial output so the graph software doesn't crash
+
     GyroData_t gyro;
     AccelData_t accel;
     BYTE buf[100];
@@ -114,8 +116,13 @@ void testThread(void * pvParameters) {
   	complementary_x = (dt * filter_x[1]) + complementary_x;
   	complementary_y = (dt * filter_y[1]) + complementary_y;
 
-        sprintf(buf, "%1.3f,%1.3f\r\n", complementary_x, complementary_y);
-        serial_putString(UART1, buf);
+        if (outputCount >= 10) {
+            sprintf(buf, "%1.3f,%1.3f\r\n", complementary_x, complementary_y);
+            serial_putString(UART1, buf);
+            outputCount = 0;
+        } else {
+            outputCount++;
+        }
 
         vTaskDelayUntil(&time, dt * 1000);
     }

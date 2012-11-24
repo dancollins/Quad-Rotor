@@ -16,7 +16,7 @@ void serial_init(void) {
     U1STAbits.UTXEN = 1; // Enable the TX
     U1STAbits.URXEN = 1; // Enable the RX
     U1STAbits.URXISEL = 0; // Interrupt when the RX buffer has any data
-    U1BRG = 64; // 38.4kbps
+    U1BRG = 21; // 115.2kbps
 
     // Interrupt
     IEC0bits.U1RXIE = 1; // Enable receive interrupt
