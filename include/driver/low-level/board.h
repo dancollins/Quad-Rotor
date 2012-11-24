@@ -11,7 +11,14 @@
 #define BOARD_H
 
 #include <xc.h>
+#include <GenericTypeDefs.h>
 #include <plib.h>
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+
+#include "serial.h"
 
 /**
  * System
@@ -91,9 +98,9 @@ typedef struct {
 void board_init(void);
 
 /**
- * This needs to be run at the tick rate to update the buttons
+ * This needs to be run at the tick rate to update the board
  */
-void board_update(void);
+void board_update(void * pvParameters);
 
 /**
  * Send the CPU into idle mode

@@ -4,8 +4,14 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="low-level" projectFiles="true">
-        <itemPath>include/low-level/board.h</itemPath>
+      <logicalFolder name="f2" displayName="driver" projectFiles="true">
+        <logicalFolder name="f1" displayName="low-level" projectFiles="true">
+          <itemPath>include/driver/low-level/board.h</itemPath>
+          <itemPath>include/driver/low-level/iic.h</itemPath>
+          <itemPath>include/driver/low-level/serial.h</itemPath>
+        </logicalFolder>
+        <itemPath>include/driver/gyro.h</itemPath>
+        <itemPath>include/driver/accel.h</itemPath>
       </logicalFolder>
       <itemPath>include/FreeRTOSConfig.h</itemPath>
     </logicalFolder>
@@ -16,6 +22,15 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f3" displayName="driver" projectFiles="true">
+        <logicalFolder name="f1" displayName="low-level" projectFiles="true">
+          <itemPath>src/driver/low-level/board.c</itemPath>
+          <itemPath>src/driver/low-level/iic.c</itemPath>
+          <itemPath>src/driver/low-level/serial.c</itemPath>
+        </logicalFolder>
+        <itemPath>src/driver/gyro.c</itemPath>
+        <itemPath>src/driver/accel.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="FreeRTOS" projectFiles="true">
         <logicalFolder name="f1" displayName="Portable" projectFiles="true">
           <itemPath>src/FreeRTOS/portable/heap_4.c</itemPath>
@@ -27,9 +42,6 @@
         <itemPath>src/FreeRTOS/queue.c</itemPath>
         <itemPath>src/FreeRTOS/tasks.c</itemPath>
         <itemPath>src/FreeRTOS/timers.c</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="low-level" projectFiles="true">
-        <itemPath>src/low-level/board.c</itemPath>
       </logicalFolder>
       <itemPath>src/main.c</itemPath>
     </logicalFolder>
@@ -79,7 +91,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include;C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include\FreeRTOS;C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include\FreeRTOS\portable;C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include\low-level"/>
+                  value="C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include;C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include\FreeRTOS;C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include\FreeRTOS\portable;C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include\driver;C:\Users\Dan\Projects\Electronics\Quad Rotor\QuadRotorRevB.X\include\driver\low-level"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="isolate-each-function" value="false"/>
         <property key="keep-inline" value="false"/>

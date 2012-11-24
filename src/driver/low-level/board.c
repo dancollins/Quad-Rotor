@@ -71,56 +71,62 @@ void board_init(void) {
     INTEnableInterrupts();
 }
 
-/**
- * Button Debouncing
- */
-void board_update(void) {
-    // Button 1
-    if (but1) {
-        board_b1.pressed = TRUE;
+void board_update(void * pvParameters) {
+    portTickType time = xTaskGetTickCount();
 
-        if(board_b1.time < BUTTON_COUNT)
-            board_b1.time++;
-    } else {
-        if (board_b1.time)
-            board_b1.time --;
+    while (TRUE) {
+        // Button 1
+        if (but1) {
+            board_b1.pressed = TRUE;
 
-        if (board_b1.time < BUTTON_COUNT) {
-            board_b1.pressed = FALSE;
-            board_b1.read = FALSE;
+            if(board_b1.time < BUTTON_COUNT)
+                board_b1.time++;
+        } else {
+            if (board_b1.time)
+                board_b1.time --;
+
+            if (board_b1.time < BUTTON_COUNT) {
+                board_b1.pressed = FALSE;
+                board_b1.read = FALSE;
+            }
         }
-    }
 
-    // Button 2
-    if (but2) {
-        board_b2.pressed = TRUE;
+        // Button 2
+        if (but2) {
+            board_b2.pressed = TRUE;
 
-        if(board_b2.time < BUTTON_COUNT)
-            board_b2.time++;
-    } else {
-        if (board_b2.time)
-            board_b2.time --;
+            if(board_b2.time < BUTTON_COUNT)
+                board_b2.time++;
+        } else {
+            if (board_b2.time)
+                board_b2.time --;
 
-        if (board_b2.time < BUTTON_COUNT) {
-            board_b2.pressed = FALSE;
-            board_b2.read = FALSE;
+            if (board_b2.time < BUTTON_COUNT) {
+                board_b2.pressed = FALSE;
+                board_b2.read = FALSE;
+            }
         }
-    }
 
-    // Button 3
-    if (but3) {
-        board_b3.pressed = TRUE;
+        // Button 3
+        if (but3) {
+            board_b3.pressed = TRUE;
 
-        if(board_b3.time < BUTTON_COUNT)
-            board_b3.time++;
-    } else {
-        if (board_b3.time)
-            board_b3.time --;
+            if(board_b3.time < BUTTON_COUNT)
+                board_b3.time++;
+        } else {
+            if (board_b3.time)
+                board_b3.time --;
 
-        if (board_b3.time < BUTTON_COUNT) {
-            board_b3.pressed = FALSE;
-            board_b3.read = FALSE;
+            if (board_b3.time < BUTTON_COUNT) {
+                board_b3.pressed = FALSE;
+                board_b3.read = FALSE;
+            }
         }
+
+        // UART
+        serial_update(UART1);
+
+        vTaskDelayUntil(&time, 1); // Sleep for a tick
     }
 }
 
@@ -151,5 +157,14 @@ BOOL board_getButtonState(BYTE button) {
             }
             return FALSE;
             break;
+    }
+}
+
+// UART1 interrupt
+void __ISR(_UART_1_VECTOR, ipl4) isr_uart1(void) {
+    if ((IEC0bits.U1RXIE == TRUE) &&(IFS0bits.U1RXIF == TRUE)) {
+        serial_isr(UART1);
+
+        IFS0bits.U1RXIF = 0; // Clear the flag
     }
 }
