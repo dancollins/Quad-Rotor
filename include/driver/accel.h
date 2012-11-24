@@ -78,9 +78,9 @@
 #define acFULL_RES            (1<<3)
 
 typedef struct {
-    float x;
-    float y;
-    float z;
+    SHORT x;
+    SHORT y;
+    SHORT z;
 } AccelData_t;
 
 /**

@@ -123,10 +123,7 @@ void board_update(void * pvParameters) {
             }
         }
 
-        // UART
-        serial_update(UART1);
-
-        vTaskDelayUntil(&time, 1); // Sleep for a tick
+        vTaskDelayUntil(&time, 1); // Sleep for a tick, for debouncing
     }
 }
 

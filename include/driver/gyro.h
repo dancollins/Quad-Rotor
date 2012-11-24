@@ -70,9 +70,9 @@
 #define gyINT_CFG_RAW_RDY_EN (1<<0)
 
 typedef struct {
-    float x;
-    float y;
-    float z;
+    SHORT x;
+    SHORT y;
+    SHORT z;
 }GyroData_t;
 
 /**

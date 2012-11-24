@@ -36,6 +36,12 @@ typedef struct {
     BYTE rx_buf_size; // The number of bytes in the buffer
 } SerialModule_t;
 
+typedef struct {
+    BYTE * buffer; // Points to the RAM containing the message
+    DWORD length; // Number of bytes in the buffer
+    BYTE port; // The UART port to send the message out on
+} SerialMessage_t;
+
 /**
  * Prepare the serial module
  */
@@ -50,9 +56,8 @@ void serial_isr(BYTE p);
 /**
  * Handle the transmission of the output buffer
  * This needs to be called periodically to send bytes out of the buffer
- * @param p The port to process
  */
-void serial_update(BYTE p);
+void serial_update(void * pvParameters);
 
 /**
  * Put a single character into the transmit buffer

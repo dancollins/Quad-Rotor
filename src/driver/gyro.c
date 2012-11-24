@@ -31,8 +31,6 @@ void gyro_init(void) {
 }
 
 void gyro_read(GyroData_t * data) {
-    SHORT x, y, z; // Hold the data straight out of the gyro
-
     iic_start(gyMODULE, FALSE);
     iic_sendByte(gyMODULE, gyADDR);
     iic_sendByte(gyMODULE, gyGYRO_XOUT_H);
@@ -41,20 +39,16 @@ void gyro_read(GyroData_t * data) {
     iic_sendByte(gyMODULE, gyADDR | 1);
 
     /* X */
-    x = (iic_getByte(gyMODULE, TRUE)<<8);
-    x |= iic_getByte(gyMODULE, TRUE);
+    data->x = (iic_getByte(gyMODULE, TRUE)<<8);
+    data->x |= iic_getByte(gyMODULE, TRUE);
 
     /* Y */
-    y = (iic_getByte(gyMODULE, TRUE)<<8);
-    y |= iic_getByte(gyMODULE, TRUE);
+    data->y = (iic_getByte(gyMODULE, TRUE)<<8);
+    data->y |= iic_getByte(gyMODULE, TRUE);
 
     /* Z */
-    z = (iic_getByte(gyMODULE, TRUE)<<8);
-    z |= iic_getByte(gyMODULE, FALSE);
+    data->z = (iic_getByte(gyMODULE, TRUE)<<8);
+    data->z |= iic_getByte(gyMODULE, FALSE);
 
     iic_stop(gyMODULE);
-
-    data->x = x / 14.375;
-    data->y = y / 14.375;
-    data->z = z / 14.375;
 }
